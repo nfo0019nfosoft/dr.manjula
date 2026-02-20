@@ -25,9 +25,10 @@ body {
 /* ========================================= */
 
 /* ================= TOP BAR ================= */
+
 .top-bar {
     background: var(--blue);
-    padding: 10px 0;
+    padding: 6px 0;   /* 🔥 space reduce (10px → 6px) */
 }
 
 .top-container {
@@ -35,7 +36,6 @@ body {
     max-width: 1100px;
     margin: 0 auto;
 }
-
 
 .top-flex {
     display: flex;
@@ -46,16 +46,31 @@ body {
 .top-left {
     display: flex;
     align-items: center;
-    gap: 45px;   /* Proper spacing between phone, time, mail */
+    gap: 25px;   /* 🔥 gap reduce (45px → 25px) */
 }
 
-/* Push button completely right */
+/* CONTACT ITEMS SMALL */
+.top-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--white);
+    font-size: 13px;   /* 🔥 smaller text */
+}
+
+/* ICON SMALL */
+.top-item i {
+    font-size: 13px;   /* 🔥 icon size reduce */
+}
+
+/* BUTTON SMALL */
 .btn-appoint {
-    margin-left: auto;  /* 🔥 THIS IS IMPORTANT */
+    margin-left: auto;
     background: var(--pink);
     color: var(--white);
-    padding: 12px 30px;
-    border-radius: 12px;
+    padding: 6px 16px;   /* 🔥 reduce button size */
+    border-radius: 8px;
+    font-size: 13px;     /* smaller text */
     font-weight: 600;
     text-decoration: none;
     transition: 0.3s;
@@ -65,57 +80,38 @@ body {
     transform: translateY(-2px);
     opacity: 0.9;
 }
-
-.top-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--white);
-    font-size: 16px;
-}
 @media (max-width: 768px) {
 
     .top-flex {
         flex-direction: column;
-        gap: 12px;
+        gap: 6px;
         text-align: center;
     }
 
     .top-left {
         flex-direction: column;
-        gap: 8px;
+        gap: 4px;
     }
 
     .btn-appoint {
         margin-left: 0;
-        width: auto;
+        padding: 5px 14px;
+        font-size: 12px;
     }
 }
 
 
+/* ================= ROOT COLORS ================= */
 
 
-
-
-/* ========================================= */
-/* NAVBAR */
-/* ========================================= */
-/* ================= HEADER ================= */
-/* ========================================= */
-/* NAVBAR - CLEAN SPACED VERSION */
-/* ========================================= */
-:root{
-    --blue:#1d67b1;
-    --pink:#ed027c;
-    --white:#ffffff;
-}
-
-/* ================= HEADER ================= */
+/* ================= HEADER (STICKY) ================= */
 header{
     width:100%;
     background:var(--white);
     box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    position:relative;
+
+    position:sticky;
+    top:0;
     z-index:999;
 }
 
@@ -123,7 +119,7 @@ header{
 .nav-container{
     max-width:1250px;
     margin:0 auto;
-     padding: 10px 40px;  
+     padding:8px 40px;
 
     display:flex;
     align-items:center;
@@ -134,15 +130,15 @@ header{
 .logo img{
     width:170px;
     height:auto;
-     display: block; 
-      margin-left: 40px;   /* adjust value */
+    display:block;
+    margin-left: 30px;
 }
 
 /* ================= NAV LINKS ================= */
 .nav-links{
     display:flex;
     align-items:center;
-    gap:65px;
+    gap:60px;
 
     list-style:none;
     margin:0;
@@ -155,10 +151,10 @@ header{
     color:var(--blue);
     font-weight:600;
     font-size:15px;
-    text-transform:uppercase;   /* 🔥 CAPS */
+    text-transform:uppercase;
     letter-spacing:1px;
     position:relative;
-    transition:0.3s;
+    transition:0.3s ease;
 }
 
 /* Underline effect */
@@ -170,7 +166,7 @@ header{
     width:0%;
     height:2px;
     background:var(--pink);
-    transition:0.3s;
+    transition:0.3s ease;
 }
 
 .nav-links li a:hover{
@@ -197,20 +193,17 @@ header{
 
     border-radius:8px;
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
-
-    list-style:none;       /* remove bullets */
+    list-style:none;
 }
 
-/* Dropdown items */
 .dropdown-menu li{
     padding:10px 20px;
-    list-style:none;       /* remove rounds */
 }
 
 .dropdown-menu li a{
     display:block;
-    white-space:nowrap;    /* single line */
-    text-transform:none;   /* normal case inside dropdown */
+    white-space:nowrap;
+    text-transform:none;
     font-size:15px;
     color:var(--blue);
 }
@@ -219,15 +212,14 @@ header{
     color:var(--pink);
 }
 
-/* Desktop hover */
+/* Desktop hover dropdown */
 @media(min-width:769px){
     .dropdown:hover .dropdown-menu{
         display:block;
     }
 }
 
-/* ================= MOBILE ================= */
-
+/* ================= MOBILE MENU TOGGLE ================= */
 .menu-toggle{
     display:none;
     font-size:26px;
@@ -235,14 +227,14 @@ header{
     cursor:pointer;
 }
 
-/* Tablet */
+/* ================= TABLET ================= */
 @media(max-width:992px){
     .nav-container{
-        padding:18px 25px;
+        padding:15px 25px;
     }
 }
 
-/* Mobile */
+/* ================= MOBILE ================= */
 @media(max-width:768px){
 
     .menu-toggle{
@@ -278,17 +270,13 @@ header{
         width:100%;
         box-shadow:none;
         padding:10px 0;
+        display:none;
     }
 
     .dropdown.active .dropdown-menu{
         display:block;
     }
 }
-
-
-
-
-
 
 
 
@@ -409,17 +397,6 @@ header{
 
 
 
-
-
-
-:root {
-    --pink: #ed027c;
-    --blue: #1d67b1;
-    --white: #ffffff;
-    --light: #f8faff;
-    --text: #444;
-}
-
 /* ================= RESET ================= */
 
 * {
@@ -457,7 +434,7 @@ body {
     justify-content: center;   /* center content */
     gap: 60px;
 
-    background: var(--light);
+    background: white;
     padding: 50px;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.06);
@@ -492,7 +469,7 @@ body {
 
 .service-desc {
     font-size: 16px;
-    color: var(--text);
+    color: black;
     line-height: 1.7;
     margin-bottom: 25px;
 }
@@ -502,7 +479,7 @@ body {
 .service-feature {
     font-size: 15px;
     margin-bottom: 12px;
-    color: #333;
+    color: black;
     display: flex;
     align-items: center;
 }
@@ -597,17 +574,9 @@ body {
 
 
 
-
-:root{
-    --pink:#ed027c;
-    --blue:#1d67b1;
-    --dark:#0e1a2b;
-    --white:#ffffff;
-}
-
 /* MAIN FOOTER */
 .footer{
-    background: linear-gradient(135deg,var(--blue),var(--pink));
+    background: var(--blue);
     color:var(--white);
     padding:60px 8% 0 8%;
     overflow:hidden;
