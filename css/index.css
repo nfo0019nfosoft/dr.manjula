@@ -2,197 +2,301 @@
 /* GLOBAL */
 /* ========================================= */
 
-body {
-    font-family: 'Poppins', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 
 :root {
     --pink: #ed027c;
     --blue: #1d67b1;
-    --light-bg: #f8faff;
-    --text-dark: #444;
     --white: #ffffff;
-    
 }
-
-
-
-.container {
-    width: 90%;
-    margin: auto;
-}
-
 /* ========================================= */
-/* 1️⃣ TOP BAR */
+/* TOP BAR DESKTOP */
 /* ========================================= */
+
+/* ================= TOP BAR ================= */
 
 .top-bar {
     background: var(--blue);
-    color: #fff;
-    padding: 10px 0;
-    font-size: 14px;
+    padding: 14px 0;
+}
+
+.container {
+    width: 92%;
+    max-width: 1300px; /* Slight increase for spacing */
+    margin: 0 auto;
 }
 
 .top-flex {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
+/* LEFT SIDE GROUP */
 .top-left {
     display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 45px;   /* Proper spacing between phone, time, mail */
+}
+
+/* Push button completely right */
+.btn-appoint {
+    margin-left: auto;  /* 🔥 THIS IS IMPORTANT */
+    background: var(--pink);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-appoint:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
 .top-item {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    color: var(--white);
+    font-size: 16px;
+}
+@media (max-width: 768px) {
+
+    .top-flex {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .top-left {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-appoint {
+        margin-left: 0;
+        width: auto;
+    }
 }
 
-.top-item i {
-    color: var(--pink);
-}
 
-.email {
-    color: #fff;
-    text-decoration: none;
-}
 
-.email:hover {
-    color: var(--pink);
-}
 
-.btn-appoint {
-    background: var(--pink);
-    color: #fff;
-    padding: 7px 18px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
 
-.btn-appoint:hover {
-    background: var(--purple);
-}
 
 /* ========================================= */
-/* 2️⃣ NAVBAR */
+/* NAVBAR */
 /* ========================================= */
-
+/* ================= HEADER ================= */
 header {
-    background: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 999;
 }
 
+/* ================= NAV CONTAINER ================= */
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Logo left, menu right */
     align-items: center;
-    padding: 18px 0;
+    padding: 15px 20px;
 }
 
+/* ================= LOGO ================= */
 .logo img {
-    height: 85px;
+    width: 160px;
+    height: auto;
 }
 
+/* ================= NAV LINKS ================= */
 .nav-links {
-    list-style: none;
     display: flex;
+    align-items: center;
     gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links li {
-    position: relative;
-}
-
-.nav-links a {
+/* Main Links */
+.nav-links li a {
     text-decoration: none;
     color: var(--blue);
     font-weight: 600;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--pink);
-}
-
-/* ========================================= */
-/* DROPDOWN */
-/* ========================================= */
-
-.dropdown-menu {
-    position: absolute;
-    top: 35px;
-    left: 0;
-    background: #fff;
-    width: 260px;              /* Increased width */
-    list-style: none;
-    display: none;
-    padding: 5px 0;
-    border-top: 3px solid var(--pink);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.08);
-}
-
-/* Make text single line */
-.dropdown-menu li a {
-    display: block;
-    padding: 10px 18px;
-    color: var(--blue);
-    font-size: 14px;
-    white-space: nowrap;       /* IMPORTANT */
+    font-size: 16px;
     position: relative;
-    transition: 0.3s;
+    padding-bottom: 5px;
+    transition: 0.3s ease;
 }
 
-/* Pink left bar hover */
-.dropdown-menu li a::before {
+/* Pink underline animation */
+.nav-links li a::after {
     content: "";
     position: absolute;
     left: 0;
-    top: 0;
-    height: 100%;
-    width: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
     background: var(--pink);
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--pink);
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    width: 280px;   /* Bigger for long text */
+    padding: 15px 0;
+    display: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    list-style: none; /* Remove dots */
+}
+
+.dropdown-menu li {
+    list-style: none;
+    padding: 10px 25px;
+}
+
+/* Subservice links */
+.dropdown-menu li a {
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 15px;
+    display: block;
+    position: relative;
+    padding-bottom: 5px;
     transition: 0.3s;
 }
 
-.dropdown-menu li a:hover::before {
-    width: 5px;                /* Pink bar width */
+/* Pink underline for dropdown */
+.dropdown-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--pink);
+    transition: 0.3s ease;
 }
 
 .dropdown-menu li a:hover {
-    background: #ffe6f2;
     color: var(--pink);
-    padding-left: 25px;        /* Slight move right */
 }
 
-/* Show dropdown when active */
-.dropdown.active .dropdown-menu {
-    display: block;
+.dropdown-menu li a:hover::after {
+    width: 100%;
 }
+
+/* Desktop hover */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* ================= MENU TOGGLE ================= */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        display: none;
+        gap: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        padding: 12px 0;
+        display: block;
+    }
+
+    /* Mobile dropdown */
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        display: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 10px 0;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
 
 /* ========================================= */
-/* 3️⃣ HERO */
+/* HERO SECTION */
 /* ========================================= */
 
 .hero {
     position: relative;
     height: 85vh;
+    min-height: 500px;
     overflow: hidden;
 }
 
+/* Slides */
 .slide {
     position: absolute;
     width: 100%;
@@ -200,19 +304,24 @@ header {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 .slide.active {
     opacity: 1;
 }
 
+/* Dark Overlay */
 .overlay {
     position: absolute;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.55);
 }
+
+/* ========================================= */
+/* HERO CONTENT DESKTOP */
+/* ========================================= */
 
 .hero-content {
     position: absolute;
@@ -224,8 +333,9 @@ header {
 }
 
 .hero-content h1 {
-    font-size: 46px;
+    font-size: 48px;
     margin-bottom: 15px;
+    line-height: 1.2;
 }
 
 .hero-content p {
@@ -234,90 +344,52 @@ header {
 }
 
 .hero-btn {
+    display: inline-block;
     background: var(--pink);
     color: #fff;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 4px;
+    padding: 12px 30px;
+    border-radius: 30px;
     font-weight: 600;
     transition: 0.3s;
 }
 
 .hero-btn:hover {
-    background: var(--purple);
+    background: #c40266;
 }
 
 /* ========================================= */
-/* MOBILE */
+/* HERO MOBILE VIEW */
 /* ========================================= */
-
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--blue);
-}
 
 @media (max-width: 768px) {
 
-    .top-flex {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        background: #fff;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 20px 0;
-        display: none;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .dropdown-menu {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        border-top: none;
-        text-align: center;
-    }
-
-    .dropdown-menu li a {
-        white-space: normal;   /* Allow wrap in mobile */
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
     .hero {
-        height: 65vh;
+        height: 70vh;
+        min-height: 400px;
+    }
+
+    .hero-content {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
+        max-width: 100%;
     }
 
     .hero-content h1 {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     .hero-content p {
         font-size: 14px;
     }
+
+    .hero-btn {
+        padding: 10px 22px;
+        font-size: 14px;
+    }
 }
-
-
-
-
-
-
-
 
 
 
@@ -343,136 +415,169 @@ header {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
+     font-family:Arial, Helvetica, sans-serif;
 }
 
 /* ========================================= */
 /* INFO SECTION */
 /* ========================================= */
 
+/* ========================================= */
+/* INFO SECTION - CENTERED FIX */
+/* ========================================= */
+/* ========================================= */
+/* INFO SECTION */
+/* ========================================= */
+
 .info-section {
     background: linear-gradient(135deg, var(--info-bg), var(--bg-light));
-    padding: 70px 0 25px;   /* Small bottom gap */
+    padding: 70px 0 40px;
 }
 
 .info-container {
     width: 90%;
+    max-width: 1200px;
     margin: auto;
     display: flex;
     gap: 30px;
+    justify-content: center;
 }
 
-/* CARD STYLE */
+/* MAIN CARD */
 .info-card {
     flex: 1;
+    min-width: 300px;
+    max-width: 370px;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--white);
-    padding: 35px 25px;
-    border-radius: 18px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    transition: 0.4s ease;
-    opacity: 0;
-}
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    text-align: center;
 
-/* Hover lift effect */
-.info-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+    /* Important for equal height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 /* Icon */
 .icon-box {
-    font-size: 28px;
-    margin-bottom: 15px;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
 /* Heading */
 .info-card h3 {
-    margin-bottom: 25px;
-    font-size: 20px;
+    font-size: 22px;
+    margin-bottom: 30px;
 }
 
-/* Info Items */
+/* Inner boxes */
 .info-item,
 .service-box {
     background: rgba(255,255,255,0.15);
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    font-size: 14px;
-    transition: 0.3s;
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    width: 100%;              /* 🔥 Equal width */
 }
 
+/* Hover */
 .service-box:hover {
     background: var(--white);
     color: var(--secondary);
 }
 
-/* Contact Text */
+/* 3rd card contact alignment */
 .info-card p {
-    margin-bottom: 12px;
-    font-size: 14px;
+    margin-bottom: 15px;
 }
 
 /* Button */
 .card-btn {
-    display: inline-block;
-    margin-top: 15px;
+    margin-top: auto;        /* 🔥 Push button to bottom */
+    align-self: center;
     background: var(--white);
     color: var(--secondary);
-    padding: 8px 18px;
-    border-radius: 20px;
+    padding: 10px 25px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s;
 }
 
 .card-btn:hover {
-    background: var(--primary);
-    color: var(--white);
+    background: var(--pink);
+    color: #fff;
 }
 
+/* ========================================= */
+/* MOBILE */
+/* ========================================= */
+
+@media (max-width: 900px) {
+    .info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-card {
+        width: 100%;
+        max-width: 420px;
+    }
+}
+
+
+/* ========================================= */
+/* ABOUT SECTION */
+/* ========================================= */
 /* ========================================= */
 /* ABOUT SECTION */
 /* ========================================= */
 
 .about-section {
     background: var(--bg-light);
-    padding: 25px 0 90px;   /* Small top gap only */
-     font-family: 'Poppins', sans-serif;
+    padding: 25px 0 90px;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 .about-container {
     width: 90%;
+    max-width: 1200px; /* డెస్క్‌టాప్‌లో మరీ వెడల్పు అవ్వకుండా */
     margin: auto;
     display: flex;
     align-items: center;
     gap: 60px;
 }
 
-/* IMAGE */
+/* IMAGE BOX */
 .about-image {
     flex: 1;
     border-radius: 18px;
     overflow: hidden;
+    display: flex;       /* ఇమేజ్ కంటైనర్ సెంటర్ కోసం */
+    justify-content: center;
 }
 
 .about-image img {
     width: 100%;
+    max-width: 500px;   /* ఇమేజ్ మరీ పెద్దది కాకుండా */
     border-radius: 18px;
     transition: 0.4s ease;
+    display: block;
 }
 
 .about-image img:hover {
     transform: scale(1.05);
 }
 
-/* CONTENT */
+/* CONTENT BOX */
 .about-content {
     flex: 1;
 }
 
-/* HEADING */
 .about-content h2 {
     font-size: 38px;
     color: var(--secondary);
@@ -480,7 +585,6 @@ header {
     font-weight: 700;
 }
 
-/* TEXT */
 .about-content p {
     font-size: 16px;
     line-height: 1.8;
@@ -488,7 +592,6 @@ header {
     margin-bottom: 20px;
 }
 
-/* BUTTON */
 .about-btn {
     display: inline-block;
     background: var(--primary);
@@ -505,112 +608,94 @@ header {
 }
 
 /* ========================================= */
-/* SCROLL ANIMATION */
+/* SCROLL ANIMATIONS (మీ పాత కోడ్ అలాగే ఉంది) */
 /* ========================================= */
 
-.reveal,
-.left,
-.right,
-.down,
-.reveal-left,
-.reveal-right {
+.reveal, .left, .right, .down, .reveal-left, .reveal-right {
     opacity: 0;
     transition: all 1s ease;
 }
 
-/* Directions */
-.left {
-    transform: translateX(-80px);
-}
+.left { transform: translateX(-80px); }
+.right { transform: translateX(80px); }
+.down { transform: translateY(80px); }
+.reveal-left { transform: translateX(-80px); }
+.reveal-right { transform: translateX(80px); }
 
-.right {
-    transform: translateX(80px);
-}
-
-.down {
-    transform: translateY(80px);
-}
-
-.reveal-left {
-    transform: translateX(-80px);
-}
-
-.reveal-right {
-    transform: translateX(80px);
-}
-
-/* Active */
-.reveal.active,
-.left.active,
-.right.active,
-.down.active,
-.reveal-left.active,
-.reveal-right.active {
+.reveal.active, .left.active, .right.active, .down.active, 
+.reveal-left.active, .reveal-right.active {
     opacity: 1;
     transform: translateX(0) translateY(0);
 }
 
 /* ========================================= */
-/* MOBILE RESPONSIVE */
+/* MOBILE & MINIMIZE PROBLEM FIX (The Key Part) */
 /* ========================================= */
 
 @media (max-width: 768px) {
-
-    .info-container {
-        flex-direction: column;
-        gap: 25px;
+    .about-container {
+        flex-direction: column; /* ఇమేజ్ పైన, టెక్స్ట్ కింద వస్తాయి */
+        gap: 35px;
+        text-align: center;     /* టెక్స్ట్ మధ్యలోకి వస్తుంది */
+        align-items: center;    /* బాక్స్‌లు స్క్రీన్ మధ్యలోకి వస్తాయి */
     }
 
-    .about-container {
-        flex-direction: column;
-        gap: 35px;
-        text-align: center;
+    .about-image {
+        width: 100%;            /* ఇమేజ్ బాక్స్ ఫుల్ విడ్త్ */
+        order: 1;               /* ఇమేజ్ మొదట ఉండాలని */
+    }
+
+    .about-image img {
+        width: 90%;             /* మొబైల్‌లో ఇమేజ్ సైజ్ కొంచెం తగ్గించి సెంటర్ కోసం */
+        margin: 0 auto;
+    }
+
+    .about-content {
+        width: 100%;
+        order: 2;               /* టెక్స్ట్ రెండో స్థానంలో */
     }
 
     .about-content h2 {
-        font-size: 24px;
+        font-size: 26px;        /* మొబైల్ కి తగ్గట్టు హెడ్డింగ్ సైజ్ */
     }
 
     .about-content p {
         font-size: 14px;
+        padding: 0 10px;        /* అంచులకి టచ్ అవ్వకుండా చిన్న గ్యాప్ */
     }
 }
 
-
-
-
-
-
 /* ================= SECTION ================= */
-
+/* ========================================= */
+/* DOCTOR SECTION */
+/* ========================================= */
 .doctor-section {
-    padding: 70px 0;              /* reduced spacing */
+    padding: 70px 0;
     background: var(--light-bg);
     display: flex;
     justify-content: center;
-     font-family: 'Poppins', sans-serif;
+    align-items: center; /* Vertical center */
+   font-family:Arial, Helvetica, sans-serif;
 }
 
 /* ================= CARD ================= */
-
 .doctor-card {
     width: 85%;
+    max-width: 1100px; /* మరీ వెడల్పు అవ్వకుండా */
     background: var(--white);
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     display: flex;
-    align-items: center;
+    align-items: stretch; /* Image and content same height */
     overflow: hidden;
     transition: 0.4s ease;
 }
 
-/* small hover lift */
 .doctor-card:hover {
     transform: translateY(-5px);
 }
 
 /* ================= IMAGE ================= */
-
 .doctor-image {
     flex: 1;
     background: linear-gradient(135deg, var(--pink), var(--blue));
@@ -629,13 +714,13 @@ header {
 }
 
 /* ================= CONTENT ================= */
-
 .doctor-content {
     flex: 1.2;
     padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
-/* HEADINGS */
 
 .doctor-content h2 {
     color: var(--blue);
@@ -662,7 +747,6 @@ header {
 }
 
 /* Specialization */
-
 .specialization h3 {
     color: var(--blue);
     font-size: 16px;
@@ -679,9 +763,9 @@ header {
     margin-bottom: 8px;
     position: relative;
     font-size: 14px;
+    text-align: left; /* Default left align */
 }
 
-/* Pink bullet */
 .specialization ul li::before {
     content: "•";
     position: absolute;
@@ -690,8 +774,7 @@ header {
     font-size: 18px;
 }
 
-/* ================= SCROLL ANIMATION ================= */
-
+/* ================= ANIMATION ================= */
 .zoom {
     opacity: 0;
     transform: scale(0.95);
@@ -703,29 +786,36 @@ header {
     transform: scale(1);
 }
 
-/* ================= MOBILE ================= */
-
+/* ================= MOBILE / MINIMIZE FIX ================= */
 @media (max-width: 768px) {
-
     .doctor-card {
         flex-direction: column;
         width: 92%;
+        align-items: center; /* Center horizontally */
     }
 
     .doctor-image {
-        padding: 25px;
+        width: 100%;
+        padding: 30px;
     }
 
     .doctor-content {
-        padding: 25px;
-        text-align: center;
+        padding: 30px;
+        text-align: center; /* All text centered */
+        align-items: center; /* Center child elements */
     }
 
     .doctor-content h2 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
-    .doctor-content p {
+    /* Specialization List Centering Fix */
+    .specialization ul {
+        display: inline-block; /* Helps in centering lists */
+        text-align: left;     /* Keeps bullets aligned with text */
+    }
+
+    .specialization ul li {
         font-size: 13px;
     }
 }
@@ -733,115 +823,116 @@ header {
 
 
 
+/* ========================================= */
+/* WHY CHOOSE US SECTION */
+/* ========================================= */
 
-
-
-
-
-
-/* SECTION */
-
-.why-section{
-    padding:100px 0;
-    background:linear-gradient(135deg,var(--pink),var(--blue));
-    text-align:center;
-     font-family: 'Poppins', sans-serif;
+.why-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--pink), var(--blue));
+    text-align: center;
+     font-family:Arial, Helvetica, sans-serif;
+    overflow: hidden; 
 }
 
-.section-title{
-    color:var(--white);
-    font-size:38px;
-    margin-bottom:60px;
+.section-titlee {
+    color: white;
+    font-size: 38px;
+    margin-bottom: 60px;
 }
 
-/* GRID */
-
-.why-container{
-    width:90%;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:30px;
+/* GRID CONTAINER */
+.why-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-items: center; /* కార్డులను గ్రిడ్ సెల్‌లో సెంటర్ చేస్తుంది */
+    align-items: stretch;
 }
 
-/* CARD */
-
-.why-card{
-    background:var(--white);
-    padding:35px 20px;
-    border-radius:16px;
-    transition:0.4s ease;
-    opacity:0;
+/* CARD STYLE */
+.why-card {
+    background: var(--white);
+    padding: 35px 20px;
+    border-radius: 16px;
+    transition: 0.4s ease;
+    opacity: 0; /* యానిమేషన్ కోసం */
+    width: 100%; /* గ్రిడ్ సెల్ మొత్తం ఆక్యుపై చేయడానికి */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ICON */
-
-.why-card i{
-    font-size:40px;
-    color:var(--pink);
-    margin-bottom:20px;
-    transition:0.3s;
+.why-card i {
+    font-size: 40px;
+    color: var(--pink);
+    margin-bottom: 20px;
+    transition: 0.3s;
 }
 
 /* TEXT */
-
-.why-card p{
-    font-size:15px;
-    font-weight:500;
+.why-card p {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark); /* టెక్స్ట్ స్పష్టంగా కనిపించడానికి */
 }
 
-/* HOVER — ONLY ICON CHANGE */
+/* HOVER */
+.why-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
 
-.why-card:hover i{
-    color:var(--blue);
+.why-card:hover i {
+    color: var(--blue);
 }
 
 /* ================= SCROLL ANIMATIONS ================= */
 
-.reveal{
-    transition:1s ease;
+.reveal {
+    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* LEFT */
-.left{
-    transform:translateX(-80px);
+.left { transform: translateX(-80px); }
+.right { transform: translateX(80px); }
+.top { transform: translateY(-80px); }
+.down { transform: translateY(80px); }
+
+.reveal.active {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
-/* RIGHT */
-.right{
-    transform:translateX(80px);
-}
+/* ================= MOBILE & MINIMIZE FIX ================= */
 
-/* TOP */
-.top{
-    transform:translateY(-80px);
-}
 
-/* DOWN */
-.down{
-    transform:translateY(80px);
-}
 
-.reveal.active{
-    opacity:1;
-    transform:translate(0,0);
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:992px){
-    .why-container{
-        grid-template-columns:repeat(2,1fr);
+@media (max-width: 992px) {
+    .why-container {
+        grid-template-columns: repeat(2, 1fr); /* ట్యాబ్లెట్‌లో 2 కాలమ్స్ */
+        gap: 25px;
     }
 }
 
-@media(max-width:600px){
-    .why-container{
-        grid-template-columns:1fr;
+@media (max-width: 600px) {
+    .why-container {
+        grid-template-columns: 1fr; /* మొబైల్‌లో సింగిల్ కాలమ్ */
+        max-width: 320px; /* కార్డు మరీ వెడల్పు అవ్వకుండా మధ్యలో ఉండటానికి */
     }
 
-    .section-title{
-        font-size:26px;
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+    
+    .why-card {
+        padding: 30px 15px;
     }
 }
 
@@ -849,147 +940,161 @@ header {
 
 
 
+/* ========================================= */
+/* SPECIALITY SECTION */
+/* ========================================= */
 
-
-
-
-
-
-/* SECTION */
-
-.special-section{
-    padding:50px 0 80px 0;   /* top reduced */
-    background:var(--light-bg);
-    text-align:center;
+.special-section {
+    padding: 50px 0 80px 0;
+    background: var(--light-bg);
+    text-align: center;
+      font-family:Arial, Helvetica, sans-serif;
+    overflow: hidden; /* యానిమేషన్ వల్ల వచ్చే గ్యాప్స్ ఆపడానికి */
 }
 
-.special-title{
-    font-size:36px;
-    margin-bottom:60px;
-    color:var(--blue);  /* Blue heading */
+.special-title {
+    font-size: 36px;
+    margin-bottom: 60px;
+    color: var(--blue);
 }
 
-/* GRID */
-
-.special-container{
-    width:90%;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:40px;
+/* GRID CONTAINER */
+.special-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-items: center; /* కార్డులను సెంటర్ లో ఉంచుతుంది */
 }
 
-/* CARD */
-
-.special-card{
-    padding:40px 25px;
-    border-radius:20px;
-    color:var(--white);
-    background:linear-gradient(135deg,var(--blue),var(--pink));
-    transition:0.4s ease;
-    opacity:0;
+/* CARD STYLE */
+.special-card {
+    padding: 40px 25px;
+    border-radius: 20px;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--blue), var(--pink));
+    transition: 0.4s ease;
+    opacity: 0; /* యానిమేషన్ కోసం */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* కార్డు లోపల కంటెంట్ సెంటర్ */
+    justify-content: center;
 }
 
 /* ICON */
-
-.special-card i{
-    font-size:40px;
-    margin-bottom:20px;
+.special-card i {
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
 /* TEXT */
-
-.special-card h3{
-    margin-bottom:15px;
+.special-card h3 {
+    margin-bottom: 15px;
 }
 
-.special-card p{
-    font-size:14px;
-    margin-bottom:25px;
+.special-card p {
+    font-size: 14px;
+    margin-bottom: 25px;
 }
 
-/* BUTTON (Image style rounded) */
-
-.special-btn{
-    display:inline-block;
-    background:var(--white);
-    color:var(--blue);
-    padding:12px 30px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
+/* BUTTON STYLE */
+.special-btn {
+    display: inline-block;
+    background: var(--white);
+    color: var(--blue);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-/* Hover pink */
-
-.special-btn:hover{
-    background:var(--pink);
-    color:var(--white);
+.special-btn:hover {
+    background: var(--pink);
+    color: var(--white);
+    transform: scale(1.05);
 }
 
-/* Hover card lift */
-
-.special-card:hover{
-    transform:translateY(-10px);
+.special-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-/* ================= ANIMATION ================= */
+/* ================= SCROLL ANIMATION ================= */
 
-.reveal{
-    transition:1s ease;
+.reveal {
+    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.left{
-    transform:translateX(-80px);
+.left { transform: translateX(-80px); }
+.right { transform: translateX(80px); }
+.top { transform: translateY(-80px); }
+
+.reveal.active {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
-.right{
-    transform:translateX(80px);
-}
+/* ================= MOBILE / MINIMIZE FIX ================= */
 
-.top{
-    transform:translateY(-80px);
-}
 
-.reveal.active{
-    opacity:1;
-    transform:translate(0,0);
-}
 
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-    .special-container{
-        grid-template-columns:1fr;
+@media (max-width: 900px) {
+    .special-container {
+        grid-template-columns: 1fr; /* సింగిల్ కాలమ్ */
+        max-width: 350px; /* కార్డులు మరీ వెడల్పుగా అవ్వకుండా */
+        margin: 0 auto;
     }
 
-    .special-title{
-        font-size:26px;
+    .special-title {
+        font-size: 26px;
+        margin-bottom: 40px;
+    }
+
+    .special-card {
+        padding: 30px 20px;
     }
 }
 
+@media (max-width: 480px) {
+    .special-container {
+        width: 95%; /* మొబైల్ లో కొంచెం ఎక్కువ స్పేస్ */
+    }
+}
 
 
-
-
-
-/* ================= SECTION ================= */
+/* ========================================= */
+/* CARE SECTION */
+/* ========================================= */
 
 .care-section {
     padding: 40px 0 70px 0;
     background: white;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.care-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* మెయిన్ బాక్స్ సెంటర్ కోసం */
 }
 
 /* ================= MAIN BOX ================= */
 
 .care-box {
     width: 100%;
-    background:  #e6efff;
+    background: #e6efff;
     display: flex;
     align-items: stretch;
     box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-
+    
+    /* Animation initial state */
     opacity: 0;
     transform: scale(0.85);
     transition: all 0.8s ease;
@@ -1007,7 +1112,10 @@ header {
     text-align: center;
     clip-path: polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%);
     
-    margin-left: 30px;   /* <-- left space added */
+    margin-left: 30px; /* డెస్క్‌టాప్‌లో స్పేస్ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ================= RIGHT SIDE ================= */
@@ -1018,9 +1126,7 @@ header {
     font-size: 24px;
     font-weight: 700;
     color: var(--blue);
-   
-
-    background: var(--light-strip-bg); /* light bg added */
+    background: var(--light-strip-bg);
     display: flex;
     align-items: center;
 }
@@ -1032,32 +1138,37 @@ header {
     transform: scale(1);
 }
 
-/* ================= MOBILE ================= */
+/* ================= MOBILE / MINIMIZE FIX ================= */
+
+
 
 @media (max-width: 768px) {
-
     .care-box {
-        flex-direction: column;
+        flex-direction: column; /* ఒకదాని కింద ఒకటి */
         text-align: center;
+        align-items: center;    /* బాక్స్ లోపల ఐటమ్స్ సెంటర్ */
+        width: 95%;
+        margin: 0 auto;         /* స్క్రీన్ మధ్యలోకి */
     }
 
     .color-strip {
-        width: 90%;
-        margin: 0 auto;
-        clip-path: none;
-        padding: 20px;
+        width: 100%;
+        min-width: unset;
+        margin-left: 0;         /* పాత మార్జిన్ తీసేశాను */
+        clip-path: none;        /* మొబైల్‌లో షేప్ తీసేస్తే సెంటర్ బాగుంటుంది */
+        padding: 25px;
         font-size: 18px;
+        justify-content: center;
     }
 
     .care-text {
         padding: 25px;
         font-size: 18px;
-        justify-content: center;
+        width: 100%;
+        justify-content: center; /* టెక్స్ట్ సెంటర్ */
+        text-align: center;
     }
 }
-
-
-
 
 
 
@@ -1080,7 +1191,7 @@ header {
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Poppins', sans-serif;
+     font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -1088,170 +1199,168 @@ body{
 }
 
 /* SECTION */
+/* ========================================= */
+/* SERVICE SECTION */
+/* ========================================= */
 
-.service-section{
-    padding:10px 5% 70px 5%;
-    background:var(--white);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+.service-section {
+    padding: 10px 5% 70px 5%;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* కంటెంట్‌ను మధ్యలోకి తెస్తుంది */
+      font-family:Arial, Helvetica, sans-serif;
 }
 
 /* TITLE */
-
-.section-title{
-    text-align:center;
-    font-size:36px;
-    font-weight:700;
-    color:var(--blue);
-    margin-bottom:50px;
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 50px;
 }
 
-/* GRID */
-
-.service-grid{
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:35px;
+/* GRID - CENTERED CARDS */
+.service-grid {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    /* auto-fit వాడటం వల్ల కార్డులు ఆటోమేటిక్ గా సర్దుకుంటాయి */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    justify-content: center; /* గ్రిడ్ ఐటమ్స్ మధ్యలో ఉండటానికి */
 }
 
-/* CARD */
-
-.service-card{
-    background:var(--white);
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,0.08);
-    transition:0.4s ease;
-    opacity:0;
-    transform:scale(0.85);
+/* CARD STYLE */
+.service-card {
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+    opacity: 0;
+    transform: scale(0.85);
+    margin: 0 auto; /* మినిమైజ్ చేసినప్పుడు కార్డ్ మధ్యలో ఉండటానికి */
+    width: 100%;
 }
 
 /* IMAGE */
+.card-img {
+    overflow: hidden; /* జూమ్ అయినప్పుడు బయటకు రాకుండా */
+}
 
-.card-img img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    transition:0.5s;
+.card-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.5s;
+    display: block;
 }
 
 /* IMAGE ZOOM HOVER */
-
-.service-card:hover .card-img img{
-    transform:scale(1.1);
+.service-card:hover .card-img img {
+    transform: scale(1.1);
 }
 
 /* CONTENT */
-
-.card-content{
-    padding:25px;
-    text-align:center;
+.card-content {
+    padding: 25px;
+    text-align: center;
 }
 
-.card-content h3{
-    color:var(--pink);
-    font-size:18px;
-    margin-bottom:10px;
+.card-content h3 {
+    color: var(--pink);
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
-.card-content p{
-    font-size:14px;
-    color:var(--dark);
-    margin-bottom:20px;
-    line-height:1.6;
+.card-content p {
+    font-size: 14px;
+    color: var(--dark);
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 /* BUTTON */
-
-.card-content a{
-    display:inline-block;
-    background:linear-gradient(135deg,var(--blue),var(--pink));
-    color:var(--white);
-    padding:10px 25px;
-    border-radius:50px;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:600;
-    transition:0.3s;
+.card-content a {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--blue), var(--pink));
+    color: var(--white);
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-/* BUTTON HOVER */
-
-.card-content a:hover{
-    background:var(--pink);
+.card-content a:hover {
+    background: var(--pink); /* ఇక్కడ గ్రేడియంట్ మార్చవచ్చు */
+    transform: translateY(-2px);
 }
 
-/* CARD LIFT */
-
-.service-card:hover{
-    transform:translateY(-10px);
+/* CARD LIFT HOVER */
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
 }
 
 /* SCROLL ZOOM ACTIVE */
-
-.zoom.active{
-    opacity:1;
-    transform:scale(1);
+.zoom.active {
+    opacity: 1;
+    transform: scale(1);
 }
 
-/* ========================= */
-/* MOBILE RESPONSIVE */
-/* ========================= */
+/* ========================================= */
+/* MOBILE RESPONSIVE - CENTERED FIX */
+/* ========================================= */
 
-@media(max-width:768px){
 
-    .section-title{
-        font-size:26px;
-        margin-bottom:35px;
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 35px;
     }
 
-    .service-grid{
-        grid-template-columns:1fr;
+    .service-grid {
+        grid-template-columns: 1fr; /* మొబైల్ లో సింగిల్ కాలమ్ */
+        max-width: 400px; /* కార్డు మరీ వెడల్పు అవ్వకుండా */
+        margin: 0 auto;
     }
 
-    .service-card{
-        margin:auto;
-        max-width:350px;
+    .service-card {
+        margin-bottom: 20px;
     }
 
-    .card-img img{
-        height:190px;
+    .card-img img {
+        height: 190px;
     }
-
-    .card-content{
-        text-align:center;
-    }
-
 }
 
 /* SMALL MOBILE */
-
-@media(max-width:480px){
-
-    .service-section{
-        padding:30px 15px 60px 15px;
+@media (max-width: 480px) {
+    .service-section {
+        padding: 30px 15px 60px 15px;
     }
 
-    .card-content h3{
-        font-size:16px;
+    .service-grid {
+        max-width: 100%;
     }
 
-    .card-content p{
-        font-size:13px;
+    .card-content h3 {
+        font-size: 16px;
     }
 
-    .card-content a{
-        padding:8px 20px;
-        font-size:13px;
+    .card-content p {
+        font-size: 13px;
     }
 
+    .card-content a {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
 }
-
-
-
-
 
 
 
@@ -1274,150 +1383,161 @@ body{
 }
 
 /* SECTION */
+/* ========================================= */
+/* MISSION & VISION SECTION */
+/* ========================================= */
 
-.mv-section{
-   padding:40px 5% 80px 5%; 
-    background:var(--light);
-    text-align:center;
+.mv-section {
+    padding: 40px 5% 80px 5%;
+    background: var(--light);
+    text-align: center;
+   font-family:Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
 /* TITLE */
-
-.mv-title{
-    font-size:36px;
-    color:var(--pink);
-    margin-bottom:40px;
+.mv-title {
+    font-size: 36px;
+    color: var(--blue);
+    margin-bottom: 40px;
 }
 
 /* WRAPPER */
-
-.mv-wrapper{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:50px;
+.mv-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* IMAGES */
+.mv-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
 
-.mv-img img{
-    width:360px;
-    border-radius:30px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+.mv-img img {
+    width: 360px;
+    max-width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    display: block;
 }
 
 /* CENTER STACK STYLE */
-
-.mv-center{
-    position:relative;
-    width:420px;
+.mv-center {
+    position: relative;
+    width: 420px;
+    flex: 1;
 }
 
 /* CARD BASE */
-
-.mv-card{
-    background:var(--white);
-    padding:40px 30px;
-    border-radius:30px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.08);
-    text-align:left;
-    position:relative;
-    transition:0.4s;
+.mv-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    text-align: left; /* Desktop లో లెఫ్ట్ అలైన్ బాగుంటుంది */
+    position: relative;
+    transition: 0.4s;
+    width: 100%;
 }
 
 /* Mission Card Slight Up */
-
-.mv-card.mission{
-    margin-bottom:-40px;
-    border-top:6px solid var(--blue);
+.mv-card.mission {
+    margin-bottom: -40px;
+    border-top: 6px solid var(--blue);
+    z-index: 2;
 }
 
 /* Vision Card Slight Down */
-
-.mv-card.vision{
-    margin-top:40px;
-    border-top:6px solid var(--pink);
+.mv-card.vision {
+    margin-top: 40px;
+    border-top: 6px solid var(--pink);
 }
 
 /* ICON */
-
-.mv-card .icon{
-    font-size:30px;
-    margin-bottom:15px;
+.mv-card .icon {
+    font-size: 30px;
+    margin-bottom: 15px;
 }
 
 /* TEXT */
-
-.mv-card h3{
-    margin-bottom:10px;
-    color:var(--blue);
+.mv-card h3 {
+    margin-bottom: 10px;
+    color: var(--blue);
 }
 
-.mv-card p{
-    font-size:14px;
-    line-height:1.6;
-    color:var(--text);
+.mv-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text);
 }
 
 /* HOVER EFFECT */
-
-.mv-card:hover{
-    transform:translateY(-10px);
+.mv-card:hover {
+    transform: translateY(-10px);
 }
 
 /* ================= ANIMATIONS ================= */
 
-.reveal-left,
-.reveal-right,
-.reveal-top,
-.reveal-bottom{
-    opacity:0;
-    transition:1s ease;
+.reveal-left, .reveal-right, .reveal-top, .reveal-bottom {
+    opacity: 0;
+    transition: 1s ease;
 }
 
-.reveal-left{ transform:translateX(-100px); }
-.reveal-right{ transform:translateX(100px); }
-.reveal-top{ transform:translateY(-80px); }
-.reveal-bottom{ transform:translateY(80px); }
+.reveal-left { transform: translateX(-100px); }
+.reveal-right { transform: translateX(100px); }
+.reveal-top { transform: translateY(-80px); }
+.reveal-bottom { transform: translateY(80px); }
 
-.reveal-left.active,
-.reveal-right.active,
-.reveal-top.active,
-.reveal-bottom.active{
-    opacity:1;
-    transform:translate(0);
+.reveal-left.active, .reveal-right.active, .reveal-top.active, .reveal-bottom.active {
+    opacity: 1;
+    transform: translate(0);
 }
 
-/* ================= MOBILE ================= */
+/* ================= MOBILE / MINIMIZE FIX ================= */
 
-@media(max-width:900px){
-
-    .mv-wrapper{
-        flex-direction:column;
+@media (max-width: 900px) {
+    .mv-wrapper {
+        flex-direction: column; /* ఒకదాని కింద ఒకటి */
+        gap: 30px;
     }
 
-    .mv-img img{
-        width:100%;
-        max-width:400px;
+    .mv-img {
+        width: 100%;
+        order: 1; /* ఇమేజ్ పైన ఉండటానికి */
     }
 
-    .mv-center{
-        width:100%;
+    .mv-img img {
+        max-width: 400px;
+        width: 90%;
+        margin: 0 auto;
     }
 
-    .mv-card.mission,
-    .mv-card.vision{
-        margin:0;
+    .mv-center {
+        width: 100%;
+        max-width: 500px;
+        order: 2;
+        margin: 0 auto; /* సెంటర్ కోసం */
     }
 
-    .mv-title{
-        font-size:26px;
+    .mv-card {
+        text-align: center; /* మొబైల్ లో టెక్స్ట్ సెంటర్ */
+        margin: 15px 0 !important; /* పాత నెగటివ్ మార్జిన్స్ తీసేశాను */
+    }
+
+    .mv-card.mission, .mv-card.vision {
+        margin: 15px 0 !important;
+    }
+
+    .mv-title {
+        font-size: 26px;
     }
 }
-
-
-
-
 
 
 
@@ -1430,93 +1550,111 @@ body{
 }
 
 /* SECTION */
+/* ========================================= */
+/* FACILITIES SECTION */
+/* ========================================= */
 
-.facilities-section{
-    padding:60px 5%;
-    background:#e6efff;
-    text-align:center;
+.facilities-section {
+    padding: 60px 5%;
+    background: #e6efff;
+    text-align: center;
+     font-family:Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
 /* TITLE */
-
-.facilities-title{
-    font-size:40px;
-    font-weight:700;
-    color:var(--pink);
-    margin-bottom:50px;
+.facilities-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 50px;
 }
 
 /* GRID */
-
-.facilities-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+.facilities-grid {
+    display: grid;
+    /* auto-fit తో పాటు justify-content చేర్చడం వల్ల కార్డులు ఎప్పుడూ మధ్యలో ఉంటాయి */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center; 
 }
 
 /* CARD */
-
-.facility-card{
-    background:var(--white);
-    padding:30px 20px;
-    border-radius:15px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.08);
-    transition:0.4s ease;
-    opacity:0;
-    transform:scale(0.85);
+.facility-card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+    opacity: 0;
+    transform: scale(0.85);
+    
+    /* కంటెంట్ కార్డ్ లోపల సెంటర్ అవ్వడానికి */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* ICON */
-
-.facility-card i{
-    font-size:40px;
-    margin-bottom:15px;
-    background:linear-gradient(135deg,var(--blue),var(--pink));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+/* ICON - GRADIENT STYLE */
+.facility-card i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--blue), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 /* TEXT */
-
-.facility-card h4{
-    font-size:18px;
-    font-weight:600;
-    color:var(--blue)
+.facility-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--blue);
 }
 
 /* HOVER */
-
-.facility-card:hover{
-    transform:translateY(-8px);
+.facility-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 /* SCROLL ANIMATION */
-
-.zoom.active{
-    opacity:1;
-    transform:scale(1);
+.zoom.active {
+    opacity: 1;
+    transform: scale(1);
 }
 
-/* MOBILE */
+/* ================= MOBILE / MINIMIZE FIX ================= */
 
-@media(max-width:768px){
-
-    .facilities-title{
-        font-size:28px;
+@media (max-width: 768px) {
+    .facilities-title {
+        font-size: 28px;
+        margin-bottom: 35px;
     }
 
-    .facilities-grid{
-        grid-template-columns:1fr;
-        justify-items:center;
+    .facilities-grid {
+        grid-template-columns: 1fr; /* సింగిల్ కాలమ్ */
+        justify-items: center;      /* గ్రిడ్ ఐటమ్స్ సెంటర్ */
+        gap: 20px;
     }
 
-    .facility-card{
-        width:90%;
-        max-width:350px;
+    .facility-card {
+        width: 100%;
+        max-width: 350px; /* కార్డ్ మరీ వెడల్పు అవ్వకుండా */
+        margin: 0 auto;   /* పక్కాగా సెంటర్ లో ఉండటానికి */
     }
 }
 
-
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    .facilities-section {
+        padding: 40px 15px;
+    }
+}
 
 
 
@@ -1533,109 +1671,127 @@ body{
 }
 
 /* SECTION */
+/* ========================================= */
+/* HIGHLIGHTS SECTION */
+/* ========================================= */
 
-.highlights-section{
-    padding:70px 5%;
-    background:linear-gradient(135deg,#f9fbff,#eef4ff);
-    text-align:center;
+.highlights-section {
+    padding: 70px 5%;
+    background: linear-gradient(135deg, #f9fbff, #eef4ff);
+    text-align: center;
+     font-family:Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
-/* TITLE */
-
-.highlight-title{
-    font-size:38px;
-    font-weight:700;
-    color:var(--pink);
-    margin-bottom:10px;
+/* TITLE & SUBTITLE */
+.highlight-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 10px;
 }
 
-.highlight-sub{
-    font-size:15px;
-    margin-bottom:50px;
-    color:#555;
+.highlight-sub {
+    font-size: 15px;
+    margin-bottom: 50px;
+    color: #555;
 }
 
-/* GRID */
-
-.highlight-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:30px;
+/* GRID CONTAINER - CENTERED */
+.highlight-grid {
+    display: grid;
+    /* auto-fit వాడటం వల్ల కార్డులు విడ్త్ ని బట్టి సెట్ అవుతాయి */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center; /* కార్డులు మధ్యలో ఉండటానికి */
 }
 
-/* CARD */
-
-.highlight-card{
-    background:var(--white);
-    padding:35px 20px;
-    border-radius:15px;
-    box-shadow:0 15px 30px rgba(0,0,0,0.08);
-    position:relative;
-    overflow:hidden;
-    opacity:0;
-    transform:translateY(40px);
-    transition:0.6s ease;
+/* CARD STYLE */
+.highlight-card {
+    background: var(--white);
+    padding: 35px 20px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s ease;
+    
+    /* కంటెంట్ సెంటర్ కోసం */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Top Gradient Line */
-
-.highlight-card::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:5px;
-    background:linear-gradient(135deg,var(--blue),var(--pink));
+.highlight-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(135deg, var(--blue), var(--pink));
 }
 
-/* NUMBER */
-
-.highlight-number{
-    font-size:40px;
-    font-weight:800;
-    background:linear-gradient(135deg,var(--blue),var(--pink));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    margin-bottom:10px;
+/* NUMBER (GRADIENT TEXT) */
+.highlight-number {
+    font-size: 40px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--blue), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    display: inline-block;
 }
 
 /* TEXT */
-
-.highlight-card span{
-    font-size:15px;
-    color:#444;
+.highlight-card span {
+    font-size: 15px;
+    color: #444;
+    font-weight: 500;
 }
 
 /* SCROLL ACTIVE */
-
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* HOVER */
-
-.highlight-card:hover{
-    transform:translateY(-8px);
+.highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* MOBILE */
+/* ================= MOBILE / MINIMIZE FIX ================= */
 
-@media(max-width:768px){
-
-    .highlight-title{
-        font-size:26px;
+@media (max-width: 768px) {
+    .highlight-title {
+        font-size: 26px;
     }
 
-    .highlight-grid{
-        grid-template-columns:1fr;
-        justify-items:center;
+    .highlight-sub {
+        font-size: 14px;
+        margin-bottom: 35px;
+        padding: 0 10px;
     }
 
-    .highlight-card{
-        width:90%;
-        max-width:350px;
+    .highlight-grid {
+        grid-template-columns: 1fr; /* మొబైల్ లో సింగిల్ కాలమ్ */
+        justify-items: center;      /* గ్రిడ్ సెంటర్ */
+        gap: 20px;
+    }
+
+    .highlight-card {
+        width: 100%;
+        max-width: 320px; /* కార్డ్ మరీ వెడల్పు అవ్వకుండా */
+        margin: 0 auto;   /* పక్కాగా సెంటర్ లో ఉండటానికి */
     }
 }
 
@@ -1643,198 +1799,234 @@ body{
 
 
 
-
-
-
-
-
-
-
-
-
-:root{
-    --pink:#ed027c;
-    --blue:#1d67b1;
-    --white:#ffffff;
-    --light:#f4f8ff;
-}
-
-/* COMMON HEADING */
-.section-heading{
-    text-align:center;
-    font-size:36px;
-    
-    margin-bottom:40px;
-    background:var(--pink);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
 
 /* ================= GALLERY ================= */
 
-.gallery-section{
-    padding:70px 5%;
-    background:var(--light);
-}
-
-.gallery-wrapper{
-    overflow:hidden;
-    position:relative;
-}
-
-.gallery-track{
-    display:flex;
-    gap:20px;
-    width:max-content;
-    animation:scrollGallery 25s linear infinite;
-}
-
-.gallery-track img{
-    width:320px;
-    height:220px;
-    object-fit:cover;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    transition:0.4s;
-}
-
-.gallery-track img:hover{
-    transform:scale(1.08);
-}
-
-@keyframes scrollGallery{
-    0%{ transform:translateX(0); }
-    100%{ transform:translateX(-50%); }
+.gallery-section {
+    padding: 70px 0;
+    background: var(--light);
+    overflow: hidden;
 }
 
 
-/* ================= REVIEWS ================= */
 
-.google-review-section{
-    padding:70px 5%;
-    background:#ffffff;
+.gallery-section .section-heading {
+    text-align: center;
+    
+    font-size: 38px;
+    
+    color: var(--blue);
+    margin-bottom: 10px;
 }
 
-.review-container{
-    display:flex;
-    gap:30px;
-    align-items:center;
+
+.gallery-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;              /* 🔥 Always center */
+    overflow: hidden;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollGallery 30s linear infinite;
+}
+
+.gallery-track img {
+    width: 320px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: 0.4s;
+    flex-shrink: 0;
+}
+
+.gallery-track img:hover {
+    transform: scale(1.08);
+}
+
+@keyframes scrollGallery {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* 🔥 MOBILE FIX */
+@media (max-width: 900px) {
+
+    .gallery-wrapper {
+        width: 95%;
+    }
+
+    .gallery-track img {
+        width: 260px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .gallery-track img {
+        width: 220px;
+        height: 160px;
+    }
+
+    .gallery-track {
+        animation-duration: 18s;
+    }
+}
+
+
+
+
+
+/* ================= GOOGLE REVIEWS ================= */
+
+.google-review-section {
+    padding: 70px 0;
+    background: #fff;
+}
+
+.google-review-section .section-heading {
+    text-align: center;
+ 
+    font-size: 38px;
+
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+
+.review-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
 }
 
 /* LEFT SUMMARY */
-.google-summary{
-    width:320px;
-    padding:30px;
-    border-radius:20px;
-    background:linear-gradient(135deg,var(--pink),var(--blue));
-    color:#fff;
-    box-shadow:0 15px 35px rgba(0,0,0,0.1);
+.google-summary {
+    width: 320px;
+    padding: 35px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--pink), var(--blue));
+    color: #fff;
+    text-align: center;
+    flex-shrink: 0;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-.google-summary h4{
-    margin-bottom:10px;
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
-.rating{
-    display:flex;
-    gap:8px;
-    align-items:center;
+.score {
+    font-size: 22px;
+    font-weight: 700;
 }
 
-.score{
-    font-size:22px;
-    font-weight:700;
+.stars {
+    color: #ffd700;
 }
 
-.stars{
-    color:#ffd700;
+.google-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #fff;
+    color: var(--pink);
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.google-btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:10px 20px;
-    background:#fff;
-    color:var(--pink);
-    border-radius:25px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.google-btn:hover{
-    background:var(--blue);
-    color:#fff;
+.google-btn:hover {
+    background: var(--blue);
+    color: #fff;
 }
 
 /* SLIDER */
-.slider{
-    overflow:hidden;
-    flex:1;
+.slider {
+    flex: 1;
+    overflow: hidden;
 }
 
-.slider-track{
-    display:flex;
-    gap:20px;
-    animation:slideReviews 20s linear infinite;
+.slider-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: slideReviews 30s linear infinite;
 }
 
-.review-card{
-    min-width:280px;
-    background:#fff;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 12px 30px rgba(0,0,0,0.08);
-    transition:0.4s;
+.review-card {
+    width: 300px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    flex-shrink: 0;
+    transition: 0.3s;
 }
 
-.review-card:hover{
-    transform:translateY(-8px);
+.review-card:hover {
+    transform: translateY(-8px);
 }
 
-.review-card h5{
-    color:var(--blue);
-    margin-bottom:10px;
+.review-card h5 {
+    color: var(--blue);
+    margin-bottom: 8px;
 }
 
-.review-card p{
-    font-size:14px;
-    line-height:1.6;
-    color:#555;
+.review-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
 }
 
-@keyframes slideReviews{
-    0%{ transform:translateX(0); }
-    100%{ transform:translateX(-50%); }
+@keyframes slideReviews {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
+/* 🔥 MOBILE FIX */
+@media (max-width: 900px) {
 
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-    .review-container{
-        flex-direction:column;
+    .review-container {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .google-summary{
-        width:100%;
-        text-align:center;
+    .google-summary {
+        width: 100%;
+        max-width: 400px;
     }
 
-    .slider{
-        width:100%;
-    }
-
-    .gallery-track img{
-        width:250px;
-        height:180px;
-    }
-
-    .section-heading{
-        font-size:26px;
+    .slider {
+        width: 100%;
     }
 }
+
+@media (max-width: 480px) {
+
+    .slider-track {
+        animation-duration: 18s;
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -1850,172 +2042,192 @@ body{
 }
 
 /* SECTION */
-.contact-section{
-     padding:40px 6% 80px 6%;  /* top reduced */
-    background:var(--light);
+/* ========================================= */
+/* CONTACT SECTION */
+/* ========================================= */
+.contact-section {
+    padding: 40px 6% 80px 6%;
+    background: var(--light);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 /* CONTAINER */
-.contact-container{
-    display:flex;
-    justify-content:space-between;
-    align-items:stretch;
-    gap:50px;
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
 }
 
-/* LEFT */
-.contact-left{
-    flex:1;
-}
-/* Blue color for headings */
-.contact-box h4{
-    color:#1d67b1;   /* Blue */
-    font-weight:600;
+/* LEFT SIDE */
+.contact-left {
+    flex: 1;
 }
 
-/* Blue color for content text */
-.contact-box p{
-    color:black;
-    margin:0;
-}
-
-/* If phone & email clickable links unte */
-.contact-box a{
-    color:#1d67b1;
-    text-decoration:none;
-    transition:0.3s ease;
-}
-
-/* Hover pink effect */
-.contact-box a:hover{
-    color:#ed027c;
-}
-
-.contact-title{
-    color:var(--pink);
-    font-size:30px;
-    margin-bottom:30px;
+.contact-title {
+    color: var(--pink);
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: 700;
 }
 
 /* CONTACT BOX */
-.contact-box{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    background:#fff;
-    padding:15px 20px;
-    border-radius:15px;
-    margin-bottom:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    transition:0.3s;
+.contact-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    text-align: left; /* Desktop లో లెఫ్ట్ అలైన్ */
 }
 
-.contact-box:hover{
-    transform:translateY(-5px);
+.contact-box:hover {
+    transform: translateY(-5px);
 }
 
-/* ICON GRADIENT */
-.icon{
-    font-size:22px;
-    background:linear-gradient(135deg,var(--pink),var(--blue));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+.contact-box h4 {
+    color: #1d67b1;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.contact-box p, .contact-box a {
+    color: black;
+    margin: 0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.contact-box a:hover {
+    color: #ed027c;
+}
+
+/* ICON */
+.icon {
+    font-size: 22px;
+    background: linear-gradient(135deg, var(--pink), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    flex-shrink: 0;
 }
 
 /* MAP */
-.map-box{
-    margin-top:20px;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+.map-box {
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* RIGHT */
-.contact-right{
-    flex:1;
-    background:linear-gradient(135deg,var(--blue),var(--pink));
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+.map-box iframe {
+    width: 100%;
+    display: block;
 }
 
-.contact-right h2{
-    color:#fff;
-    margin-bottom:25px;
+/* RIGHT SIDE - FORM */
+.contact-right {
+    flex: 1;
+    background: linear-gradient(135deg, var(--blue), var(--pink));
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* FORM */
-.contact-right form{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+.contact-right h2 {
+    color: #fff;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.contact-right form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .contact-right input,
 .contact-right select,
-.contact-right textarea{
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    outline:none;
-    font-size:14px;
+.contact-right textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
 }
 
-.contact-right button{
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    background:#fff;
-    color:var(--pink);
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
+.contact-right button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--pink);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 5px;
 }
 
-.contact-right button:hover{
-    background:var(--blue);
-    color:#fff;
+.contact-right button:hover {
+    background: var(--blue);
+    color: #fff;
 }
 
-/* SCROLL ANIMATIONS */
-.reveal-left{
-    opacity:0;
-    transform:translateX(-80px);
-    transition:0.8s ease;
+/* ================= SCROLL ANIMATIONS ================= */
+.reveal-left, .reveal-right {
+    opacity: 0;
+    transition: 0.8s ease;
+}
+.reveal-left { transform: translateX(-80px); }
+.reveal-right { transform: translateX(80px); }
+
+.reveal-left.active, .reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.reveal-right{
-    opacity:0;
-    transform:translateX(80px);
-    transition:0.8s ease;
-}
+/* ================= MOBILE / MINIMIZE FIX ================= */
 
-.reveal-left.active,
-.reveal-right.active{
-    opacity:1;
-    transform:translateX(0);
-}
 
-@media(max-width:900px){
 
-    .contact-container{
-        flex-direction:column;
-        text-align:center;
-        justify-content:center;   /* vertical center */
-        align-items:center;       /* horizontal center */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
     }
 
-    .contact-left,
-    .contact-right{
-        width:100%;
-        max-width:500px;  /* optional - neat center look */
+    .contact-left, .contact-right {
+        width: 100%;
+        max-width: 550px; /* మరీ వెడల్పు అవ్వకుండా సెంటర్ లో ఉండటానికి */
     }
 
+    .contact-title {
+        text-align: center;
+        font-size: 26px;
+    }
+
+    .contact-box {
+        justify-content: flex-start; /* ఐకాన్ ఎడమ పక్కనే ఉండాలి కానీ బాక్స్ సెంటర్ అవ్వాలి */
+        margin: 0 auto 15px;
+        width: 95%;
+    }
+
+    .contact-right {
+        padding: 30px 20px;
+    }
 }
-
-
-
-
 
 
 
@@ -2036,6 +2248,7 @@ body{
     color:var(--white);
     padding:60px 8% 0 8%;
     overflow:hidden;
+      font-family:Arial, Helvetica, sans-serif;
 }
 
 /* WRAPPER */
@@ -2169,4 +2382,75 @@ body{
         grid-template-columns:1fr;
         text-align:center;
     }
+}
+
+
+
+
+
+
+
+/* ================= FLOATING ICONS ================= */
+
+.floating-icons {
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.float-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
+    animation: floatBounce 2s infinite;
+}
+
+/* Phone Style */
+.phone {
+    background: #25d366;
+}
+
+/* WhatsApp Style */
+.whatsapp {
+    background: #25D366;
+}
+
+/* Hover Effect */
+.float-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Floating Animation */
+@keyframes floatBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .floating-icons {
+        right: 15px;
+        bottom: 20px;
+    }
+
+    .float-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
 }

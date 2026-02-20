@@ -1,0 +1,302 @@
+/* ========================================= */
+/* GLOBAL */
+/* ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --pink: #ed027c;
+    --blue: #1d67b1;
+    --white: #ffffff;
+}
+/* ========================================= */
+/* TOP BAR DESKTOP */
+/* ========================================= */
+
+/* ================= TOP BAR ================= */
+
+.top-bar {
+    background: var(--blue);
+    padding: 14px 0;
+}
+
+.container {
+    width: 92%;
+    max-width: 1300px; /* Slight increase for spacing */
+    margin: 0 auto;
+}
+
+.top-flex {
+    display: flex;
+    align-items: center;
+}
+
+/* LEFT SIDE GROUP */
+.top-left {
+    display: flex;
+    align-items: center;
+    gap: 45px;   /* Proper spacing between phone, time, mail */
+}
+
+/* Push button completely right */
+.btn-appoint {
+    margin-left: auto;  /* 🔥 THIS IS IMPORTANT */
+    background: var(--pink);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-appoint:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.top-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    font-size: 16px;
+}
+@media (max-width: 768px) {
+
+    .top-flex {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .top-left {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-appoint {
+        margin-left: 0;
+        width: auto;
+    }
+}
+
+
+
+
+
+
+/* ========================================= */
+/* NAVBAR */
+/* ========================================= */
+/* ================= HEADER ================= */
+header {
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 999;
+}
+
+/* ================= NAV CONTAINER ================= */
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Logo left, menu right */
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* ================= LOGO ================= */
+.logo img {
+    width: 160px;
+    height: auto;
+}
+
+/* ================= NAV LINKS ================= */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Links */
+.nav-links li a {
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: 0.3s ease;
+}
+
+/* Pink underline animation */
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--pink);
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--pink);
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    width: 280px;   /* Bigger for long text */
+    padding: 15px 0;
+    display: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    list-style: none; /* Remove dots */
+}
+
+.dropdown-menu li {
+    list-style: none;
+    padding: 10px 25px;
+}
+
+/* Subservice links */
+.dropdown-menu li a {
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 15px;
+    display: block;
+    position: relative;
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+/* Pink underline for dropdown */
+.dropdown-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--pink);
+    transition: 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    color: var(--pink);
+}
+
+.dropdown-menu li a:hover::after {
+    width: 100%;
+}
+
+/* Desktop hover */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* ================= MENU TOGGLE ================= */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        display: none;
+        gap: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        padding: 12px 0;
+        display: block;
+    }
+
+    /* Mobile dropdown */
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        display: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 10px 0;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

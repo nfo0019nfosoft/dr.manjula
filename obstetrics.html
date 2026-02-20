@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Manjula Hospital</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <link rel="icon" type="image/png" href="images/lap/l11.png">
+
+    <link rel="stylesheet" href="css/gynaecology.css">
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-flex">
+                <div class="top-left">
+                    <div class="top-item"><i class="fas fa-phone-volume"></i> +91 80193 80927</div>
+                    <div class="top-item"><i class="far fa-clock"></i> Mon–Sun 9:00 AM – 9:00 PM</div>
+                    <div class="top-item"><i class="far fa-envelope"></i> drmanjulahospital1@gmail.com</div>
+                </div>
+                <a href="contact.html" class="btn-appoint">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    
+    <header>
+        <div class="container nav-container">
+<div class="logo">
+    <a href="index.html">
+        <img src="images/lap/l1.png" alt="Logo">
+    </a>
+</div>
+
+
+            <!-- NAVIGATION -->
+            <nav>
+                <ul class="nav-links">
+
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="services-toggle">
+                            Services <i class="fa-solid fa-angle-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="gynaecology.html">Gynaecology</a></li>
+                            <li><a href="obstetrics.html">Obstetrics</a></li>
+                            <li><a href="gynaecology-laparoscopic.html">Gynaecology Laparoscopic</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </div>
+    </header>
+
+   
+ 
+    <!-- ================= JS ================= -->
+   <script>
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
+
+const servicesToggle = document.querySelector(".services-toggle");
+const dropdown = document.querySelector(".dropdown");
+
+servicesToggle.addEventListener("click", function (e) {
+    if (window.innerWidth <= 768) {
+        e.preventDefault();
+        dropdown.classList.toggle("active");
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+ <section class="service-hero">
+        <div class="service-hero-content">
+            <h1>Obstetrics Services</h1>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 1 -->
+<div class="service-flex">
+<div class="service-content">
+<h3 class="service-heading">Routine Pregnancy Check-ups</h3>
+<p class="service-desc">
+Regular antenatal visits are essential for monitoring both maternal and fetal health.
+During each trimester, we assess blood pressure, blood sugar levels, weight gain,
+and fetal growth parameters. We provide nutritional counseling, supplements,
+and preventive screenings to minimize risks and ensure a healthy pregnancy journey.
+</p>
+<div class="service-feature"><i class="fa-solid fa-heart"></i> BP & Sugar Monitoring</div>
+<div class="service-feature"><i class="fa-solid fa-stethoscope"></i> Monthly Consultations</div>
+<div class="service-feature"><i class="fa-solid fa-baby"></i> Baby Movement Check</div>
+</div>
+<div class="service-image-box">
+<img src="images/obg/Routine Pregnancy.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 2 -->
+<div class="service-flex reverse">
+<div class="service-content">
+<h3 class="service-heading">High-Risk Pregnancy Care</h3>
+<p class="service-desc">
+High-risk pregnancies require specialized monitoring and expert medical supervision.
+Conditions such as gestational diabetes, hypertension, thyroid disorders,
+or previous complications demand careful evaluation and advanced testing.
+</p>
+<div class="service-feature"><i class="fa-solid fa-triangle-exclamation"></i> Intensive Monitoring</div>
+<div class="service-feature"><i class="fa-solid fa-heart-pulse"></i> Diabetes & BP Care</div>
+<div class="service-feature"><i class="fa-solid fa-shield-heart"></i> Advanced Support</div>
+</div>
+<div class="service-image-box">
+<img src="images/Obg/high risk pregnancy.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 3 -->
+<div class="service-flex">
+<div class="service-content">
+<h3 class="service-heading">Antenatal (Prenatal) Care</h3>
+<p class="service-desc">
+Comprehensive antenatal care includes blood tests, ultrasound scans,
+vaccinations, and nutritional counseling. Early and consistent prenatal care
+helps prevent complications and ensures a smoother delivery outcome.
+</p>
+<div class="service-feature"><i class="fa-solid fa-clipboard-check"></i> Lab Tests</div>
+<div class="service-feature"><i class="fa-solid fa-hand-holding-heart"></i> Nutrition Advice</div>
+<div class="service-feature"><i class="fa-solid fa-baby"></i> Growth Tracking</div>
+</div>
+<div class="service-image-box">
+<img src="images/Obg/Prenatal Care.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 4 -->
+<div class="service-flex reverse">
+<div class="service-content">
+<h3 class="service-heading">Ectopic Pregnancy Management</h3>
+<p class="service-desc">
+Ectopic pregnancy is a medical emergency requiring immediate diagnosis and treatment.
+We use ultrasound and laboratory evaluation for early detection and provide
+safe medical or surgical intervention with proper follow-up care.
+</p>
+<div class="service-feature"><i class="fa-solid fa-kit-medical"></i> Emergency Care</div>
+<div class="service-feature"><i class="fa-solid fa-syringe"></i> Medical/Surgical Treatment</div>
+<div class="service-feature"><i class="fa-solid fa-shield-virus"></i> Recovery Monitoring</div>
+</div>
+<div class="service-image-box">
+<img src="images/Obg/Ectopic pregnancy.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 5 -->
+<div class="service-flex">
+<div class="service-content">
+<h3 class="service-heading">Normal Delivery</h3>
+<p class="service-desc">
+We promote safe and natural childbirth whenever medically possible.
+Continuous monitoring and emotional support ensure a secure labor process
+and a positive birthing experience.
+</p>
+<div class="service-feature"><i class="fa-solid fa-baby"></i> Natural Birth</div>
+<div class="service-feature"><i class="fa-solid fa-heart"></i> Safe Monitoring</div>
+<div class="service-feature"><i class="fa-solid fa-hand-holding-heart"></i> Labor Support</div>
+</div>
+<div class="service-image-box">
+<img src="images/Obg/normal delivery.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 6 -->
+<div class="service-flex reverse">
+<div class="service-content">
+<h3 class="service-heading">Painless / Epidural Delivery</h3>
+<p class="service-desc">
+Epidural delivery provides effective pain relief during labor.
+Administered by experienced specialists, it ensures comfort while maintaining
+safety for both mother and baby.
+</p>
+<div class="service-feature"><i class="fa-solid fa-syringe"></i> Epidural Pain Relief</div>
+<div class="service-feature"><i class="fa-solid fa-baby-carriage"></i> Comfortable Labor</div>
+<div class="service-feature"><i class="fa-solid fa-heart-circle-check"></i> Safe Procedure</div>
+</div>
+<div class="service-image-box">
+<img src="images/Obg/Painless delivery.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 7 -->
+<div class="service-flex">
+<div class="service-content">
+<h3 class="service-heading">Cesarean Section (C-section)</h3>
+<p class="service-desc">
+Cesarean delivery is performed when normal birth is not advisable.
+Our skilled surgical team ensures minimal pain, controlled bleeding,
+and faster recovery using modern techniques.
+</p>
+<div class="service-feature"><i class="fa-solid fa-hospital"></i> Planned & Emergency</div>
+<div class="service-feature"><i class="fa-solid fa-heart-pulse"></i> Modern OT</div>
+<div class="service-feature"><i class="fa-solid fa-shield-heart"></i> Fast Recovery</div>
+</div>
+<div class="service-image-box">
+<img src="images/Obg/Cesarean Section.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 8 -->
+<div class="service-flex reverse">
+<div class="service-content">
+<h3 class="service-heading">Postnatal Care</h3>
+<p class="service-desc">
+Postnatal care focuses on maternal recovery, breastfeeding support,
+and newborn health guidance. Regular follow-ups ensure safe recovery
+and emotional wellbeing.
+</p>
+<div class="service-feature"><i class="fa-solid fa-baby"></i> Newborn Care</div>
+<div class="service-feature"><i class="fa-solid fa-hand-holding-heart"></i> Mother Recovery</div>
+<div class="service-feature"><i class="fa-solid fa-seedling"></i> Emotional Support</div>
+</div>
+<div class="service-image-box">
+<img src="images/Obg/Post-delivery Recovery.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 9 -->
+<div class="service-flex">
+<div class="service-content">
+<h3 class="service-heading">Fetal Growth & Health Monitoring</h3>
+<p class="service-desc">
+Continuous fetal monitoring using Doppler studies and ultrasound
+helps detect growth issues early and ensures timely intervention.
+</p>
+<div class="service-feature"><i class="fa-solid fa-heartbeat"></i> Doppler Scan</div>
+<div class="service-feature"><i class="fa-solid fa-chart-line"></i> Growth Tracking</div>
+<div class="service-feature"><i class="fa-solid fa-microscope"></i> Detailed Analysis</div>
+</div>
+<div class="service-image-box">
+<img src="images/Obg/Fetal Growth.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 10 -->
+<div class="service-flex reverse">
+<div class="service-content">
+<h3 class="service-heading">Fetal Ultrasound Scans</h3>
+<p class="service-desc">
+Advanced imaging techniques provide accurate evaluation of fetal anatomy,
+development milestones, and overall wellbeing throughout pregnancy.
+</p>
+<div class="service-feature"><i class="fa-solid fa-wave-square"></i> Early Scan</div>
+<div class="service-feature"><i class="fa-solid fa-heart-circle-check"></i> Anomaly Scan</div>
+<div class="service-feature"><i class="fa-solid fa-chart-line"></i> Growth Scan</div>
+</div>
+<div class="service-image-box">
+<img src="images/Obg/Ultrasound Scans.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 11 -->
+<div class="service-flex">
+<div class="service-content">
+<h3 class="service-heading">Pregnancy Complication Management</h3>
+<p class="service-desc">
+Expert care for conditions such as preeclampsia, preterm labor,
+placenta previa, and other pregnancy-related complications.
+</p>
+<div class="service-feature"><i class="fa-solid fa-kit-medical"></i> Emergency Care</div>
+<div class="service-feature"><i class="fa-solid fa-stethoscope"></i> Specialist Monitoring</div>
+<div class="service-feature"><i class="fa-solid fa-shield-heart"></i> Advanced Treatment</div>
+</div>
+<div class="service-image-box">
+<img src="images/Obg/high risk pregnancy.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 12 -->
+<div class="service-flex reverse">
+<div class="service-content">
+<h3 class="service-heading">Post-delivery Recovery Support</h3>
+<p class="service-desc">
+Comprehensive postpartum support including wound care, nutrition planning,
+hormonal monitoring, and emotional wellness guidance for smooth recovery.
+</p>
+<div class="service-feature"><i class="fa-solid fa-hand-holding-heart"></i> Recovery Monitoring</div>
+<div class="service-feature"><i class="fa-solid fa-baby"></i> Newborn Guidance</div>
+<div class="service-feature"><i class="fa-solid fa-seedling"></i> Complete Care</div>
+</div>
+<div class="service-image-box">
+<img src="images/Obg/Post-delivery Recovery.jpg" class="service-img">
+</div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="footer-wrapper">
+
+            <!-- Quick Links -->
+            <div class="footer-col reveal-left">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-col reveal-left">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="gynaecology.html">Gynaecology</a></li>
+                    <li><a href="obstetrics.html">Obstetrics</a></li>
+                    <li><a href="gynaecology-laparoscopic.html">Gynaecology Laparoscopic</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-col reveal-right">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        +91 80193 80927
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        drmanjulahospital1@gmail.com
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Near Bachpan School, Ramnagar, Hanamkonda.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Logo & Social -->
+            <div class="footer-col reveal-right footer-brand">
+                <h3>FOLLOW US ON</h3>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            © 2026 Dr Manjula Hospital — All Rights Reserved
+        </div>
+
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        function revealFooter() {
+            const elements = document.querySelectorAll(".reveal-left, .reveal-right");
+
+            elements.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+
+                if (elementTop < windowHeight - 120) {
+                    el.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealFooter);
+    </script>
+
+
+
+
+<!-- Floating Contact Icons -->
+<div class="floating-icons">
+
+    <!-- Phone -->
+    <a href="tel:+918019380927" class="float-btn phone" title="Call Now">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/918019380927" target="_blank" class="float-btn whatsapp" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</div>

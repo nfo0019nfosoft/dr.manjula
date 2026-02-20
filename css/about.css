@@ -1,0 +1,953 @@
+/* ========================================= */
+/* GLOBAL */
+/* ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --pink: #ed027c;
+    --blue: #1d67b1;
+    --white: #ffffff;
+}
+/* ========================================= */
+/* TOP BAR DESKTOP */
+/* ========================================= */
+
+/* ================= TOP BAR ================= */
+
+.top-bar {
+    background: var(--blue);
+    padding: 14px 0;
+}
+
+.container {
+    width: 92%;
+    max-width: 1300px; /* Slight increase for spacing */
+    margin: 0 auto;
+}
+.top-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-appoint {
+    background: var(--pink);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+
+/* LEFT SIDE GROUP */
+.top-left {
+    display: flex;
+    align-items: center;
+    gap: 45px;   /* Proper spacing between phone, time, mail */
+}
+
+/* Push button completely right */
+.btn-appoint {
+    margin-left: auto;  /* 🔥 THIS IS IMPORTANT */
+    background: var(--pink);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-appoint:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.top-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    font-size: 16px;
+}
+@media (max-width: 768px) {
+
+    .top-flex {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .top-left {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-appoint {
+        margin-left: 0;
+        width: auto;
+    }
+}
+
+
+
+
+
+
+/* ========================================= */
+/* NAVBAR */
+/* ========================================= */
+/* ================= HEADER ================= */
+header {
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 999;
+}
+
+/* ================= NAV CONTAINER ================= */
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Logo left, menu right */
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* ================= LOGO ================= */
+.logo img {
+    width: 160px;
+    height: auto;
+}
+
+/* ================= NAV LINKS ================= */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Links */
+.nav-links li a {
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: 0.3s ease;
+}
+
+/* Pink underline animation */
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--pink);
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--pink);
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    width: 280px;   /* Bigger for long text */
+    padding: 15px 0;
+    display: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    list-style: none; /* Remove dots */
+}
+
+.dropdown-menu li {
+    list-style: none;
+    padding: 10px 25px;
+}
+
+/* Subservice links */
+.dropdown-menu li a {
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 15px;
+    display: block;
+    position: relative;
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+/* Pink underline for dropdown */
+.dropdown-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--pink);
+    transition: 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    color: var(--pink);
+}
+
+.dropdown-menu li a:hover::after {
+    width: 100%;
+}
+
+/* Desktop hover */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* ================= MENU TOGGLE ================= */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        display: none;
+        gap: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        padding: 12px 0;
+        display: block;
+    }
+
+    /* Mobile dropdown */
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        display: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 10px 0;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= SERVICE HERO ================= */
+/* ================= SERVICE HERO ================= */
+
+.service-hero {
+    position: relative;
+    height: 65vh;
+    min-height: 420px;
+
+    /* 🔥 If CSS inside css folder use ../ */
+    background: url("../images/aboutbg.png") center center / cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+/* Dark Overlay */
+.service-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* Content */
+.service-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+
+    /* 🔥 Slight right shift */
+    transform: translateX(100px);   /* Adjust 80px / 120px if needed */
+}
+
+/* Title */
+.service-hero-content h1 {
+    font-size: 52px;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    animation: textZoom 1.3s ease forwards;
+}
+
+/* Background Zoom */
+@keyframes heroZoom {
+    0% { background-size: 100%; }
+    100% { background-size: 110%; }
+}
+
+/* Text Zoom Animation */
+@keyframes textZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+
+    .service-hero {
+        height: 55vh;
+    }
+
+    .service-hero-content h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .service-hero {
+        height: 45vh;
+        min-height: 300px;
+        justify-content: center;
+    }
+
+    .service-hero-content {
+        transform: translateX(0);  /* Center on mobile */
+        text-align: center;
+    }
+
+    .service-hero-content h1 {
+        font-size: 28px;
+        padding: 0 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.about-section {
+    background: var(--bg-light);
+    padding: 25px 0 90px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.about-container {
+    width: 90%;
+    max-width: 1200px; /* డెస్క్‌టాప్‌లో మరీ వెడల్పు అవ్వకుండా */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* IMAGE BOX */
+.about-image {
+    flex: 1;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;       /* ఇమేజ్ కంటైనర్ సెంటర్ కోసం */
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;   /* ఇమేజ్ మరీ పెద్దది కాకుండా */
+    border-radius: 18px;
+    transition: 0.4s ease;
+    display: block;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+/* CONTENT BOX */
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 38px;
+    color: var(--blue);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.about-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.about-btn:hover {
+    background: var(--secondary);
+}
+
+/* ========================================= */
+/* SCROLL ANIMATIONS (మీ పాత కోడ్ అలాగే ఉంది) */
+/* ========================================= */
+
+.reveal, .left, .right, .down, .reveal-left, .reveal-right {
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.left { transform: translateX(-80px); }
+.right { transform: translateX(80px); }
+.down { transform: translateY(80px); }
+.reveal-left { transform: translateX(-80px); }
+.reveal-right { transform: translateX(80px); }
+
+.reveal.active, .left.active, .right.active, .down.active, 
+.reveal-left.active, .reveal-right.active {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+/* ========================================= */
+/* MOBILE & MINIMIZE PROBLEM FIX (The Key Part) */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* ఇమేజ్ పైన, టెక్స్ట్ కింద వస్తాయి */
+        gap: 35px;
+        text-align: center;     /* టెక్స్ట్ మధ్యలోకి వస్తుంది */
+        align-items: center;    /* బాక్స్‌లు స్క్రీన్ మధ్యలోకి వస్తాయి */
+    }
+
+    .about-image {
+        width: 100%;            /* ఇమేజ్ బాక్స్ ఫుల్ విడ్త్ */
+        order: 1;               /* ఇమేజ్ మొదట ఉండాలని */
+    }
+
+    .about-image img {
+        width: 90%;             /* మొబైల్‌లో ఇమేజ్ సైజ్ కొంచెం తగ్గించి సెంటర్ కోసం */
+        margin: 0 auto;
+    }
+
+    .about-content {
+        width: 100%;
+        order: 2;               /* టెక్స్ట్ రెండో స్థానంలో */
+    }
+
+    .about-content h2 {
+        font-size: 26px;        /* మొబైల్ కి తగ్గట్టు హెడ్డింగ్ సైజ్ */
+    }
+
+    .about-content p {
+        font-size: 14px;
+        padding: 0 10px;        /* అంచులకి టచ్ అవ్వకుండా చిన్న గ్యాప్ */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+    --pink: #ed027c;
+    --blue: #1d67b1;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f9fb;
+}
+
+/* ========================= */
+/* Section */
+/* ========================= */
+
+.mission-vision {
+    padding: 80px 10%;
+    background: #f4f9fb;
+    text-align: center;
+}
+
+/* Heading */
+.mv-heading h2 {
+    font-size: 36px;
+    color: var(--pink);
+    margin-bottom: 15px;
+}
+
+.mv-heading p {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* ========================= */
+/* Container */
+/* ========================= */
+
+.mv-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* ========================= */
+/* Cards */
+/* ========================= */
+
+.mv-card {
+    flex: 1;
+    max-width: 350px;
+    background: #f1f1f5;
+    padding: 40px 35px;
+    border-radius: 25px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: all 0.8s ease;
+    opacity: 0;
+}
+
+/* Top Borders */
+.mv-card.mission {
+    border-top: 6px solid var(--pink);
+    transform: translateX(-80px);
+}
+
+.mv-card.vision {
+    border-top: 6px solid var(--blue);
+    transform: translateX(80px);
+}
+
+/* Show animation class */
+.mv-card.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Hover */
+.mv-card:hover {
+    transform: translateY(-12px);
+}
+
+/* Tag */
+.tag {
+    display: inline-block;
+    background: var(--pink);
+    color: var(--white);
+    padding: 6px 18px;
+    font-size: 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.vision .tag {
+    background: var(--blue);
+}
+
+/* Icon */
+.icon {
+    font-size: 28px;
+    color: var(--pink);
+    margin-bottom: 15px;
+}
+
+.vision .icon {
+    color: var(--blue);
+}
+
+/* Title */
+.mv-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Text */
+.mv-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .mission-vision {
+        padding: 60px 20px;
+    }
+
+    .mv-heading h2 {
+        font-size: 26px;
+    }
+
+    .mv-container {
+        flex-direction: column;
+        align-items: center;   /* CENTER CARDS */
+        justify-content: center;
+    }
+
+    .mv-card {
+        text-align: center;    /* CENTER TEXT */
+        width: 100%;
+        max-width: 450px;
+        padding: 30px 20px;
+        transform: translateY(40px);
+    }
+
+    .mv-card.show {
+        transform: translateY(0);
+    }
+
+}
+
+
+
+
+
+
+
+
+:root{
+    --pink:#ed027c;
+    --blue:#1d67b1;
+    --dark:#0e1a2b;
+    --white:#ffffff;
+}
+
+/* MAIN FOOTER */
+.footer{
+    background: linear-gradient(135deg,var(--blue),var(--pink));
+    color:var(--white);
+    padding:60px 8% 0 8%;
+    overflow:hidden;
+      font-family:Arial, Helvetica, sans-serif;
+}
+
+/* WRAPPER */
+.footer-wrapper{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:50px;
+}
+
+/* COLUMN */
+.footer-col h3{
+    font-size:22px;
+    margin-bottom:25px;
+    font-weight:700;
+}
+
+.footer-col ul{
+    list-style:none;
+    padding:0;
+}
+
+.footer-col ul li{
+    margin-bottom:18px;
+    font-size:16px;
+}
+
+.footer-col ul li a{
+    text-decoration:none;
+    color:var(--white);
+    transition:0.3s;
+}
+
+.footer-col ul li a:hover{
+    color:#ffe3f3;
+}
+
+/* CONTACT ICONS */
+.contact-list li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.contact-list i{
+    background:var(--white);
+    color:var(--pink);
+    padding:8px;
+    border-radius:50%;
+    font-size:14px;
+}
+
+/* SOCIAL */
+.social-icons{
+    margin-top:20px;
+}
+
+.social-icons a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    text-decoration: none;
+    border-radius:50%;
+    background:var(--white);
+    color:var(--pink);
+    margin-right:12px;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    background:var(--pink);
+    color:var(--white);
+}
+
+/* BOTTOM BAR */
+.footer-bottom{
+    margin-top:50px;
+
+    width:100vw;              /* Full screen width */
+    margin-left:calc(-8vw);   /* Same as footer side padding */
+    
+    text-align:center;
+    padding:18px 0;
+    background:rgba(0,0,0,0.2);
+    font-size:15px;
+}
+
+
+/* ======================
+   SCROLL ANIMATION
+====================== */
+
+.reveal-left{
+    opacity:0;
+    transform:translateX(-60px);
+    transition:0.8s ease;
+}
+
+.reveal-right{
+    opacity:0;
+    transform:translateX(60px);
+    transition:0.8s ease;
+}
+
+.reveal-left.active,
+.reveal-right.active{
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* ======================
+   MOBILE RESPONSIVE
+====================== */
+
+@media(max-width:992px){
+    .footer-wrapper{
+        grid-template-columns:repeat(2,1fr);
+        text-align:center;
+    }
+
+    .contact-list li{
+        justify-content:center;
+    }
+}
+
+@media(max-width:600px){
+    .footer-wrapper{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+}
+
+
+
+
+
+
+
+/* ================= FLOATING ICONS ================= */
+
+.floating-icons {
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.float-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
+    animation: floatBounce 2s infinite;
+}
+
+/* Phone Style */
+.phone {
+    background: #25d366;
+}
+
+/* WhatsApp Style */
+.whatsapp {
+    background: #25D366;
+}
+
+/* Hover Effect */
+.float-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Floating Animation */
+@keyframes floatBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .floating-icons {
+        right: 15px;
+        bottom: 20px;
+    }
+
+    .float-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+}

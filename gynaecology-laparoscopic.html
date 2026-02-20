@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Manjula Hospital</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link rel="icon" type="image/png" href="images/lap/l11.png">
+
+    <link rel="stylesheet" href="css/gynaecology.css">
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-flex">
+                <div class="top-left">
+                    <div class="top-item"><i class="fas fa-phone-volume"></i> +91 80193 80927</div>
+                    <div class="top-item"><i class="far fa-clock"></i> Mon–Sun 9:00 AM – 9:00 PM</div>
+                    <div class="top-item"><i class="far fa-envelope"></i> drmanjulahospital1@gmail.com</div>
+                </div>
+                <a href="contact.html" class="btn-appoint">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    
+    <header>
+        <div class="container nav-container">
+
+            <div class="logo">
+    <a href="index.html">
+        <img src="images/lap/l1.png" alt="Logo">
+    </a>
+</div>
+
+
+            <!-- NAVIGATION -->
+            <nav>
+                <ul class="nav-links">
+
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="services-toggle">
+                            Services <i class="fa-solid fa-angle-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="gynaecology.html">Gynaecology</a></li>
+                            <li><a href="obstetrics.html">Obstetrics</a></li>
+                            <li><a href="gynaecology-laparoscopic.html">Gynaecology Laparoscopic</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </div>
+    </header>
+
+   
+ 
+    <!-- ================= JS ================= -->
+   <script>
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
+
+const servicesToggle = document.querySelector(".services-toggle");
+const dropdown = document.querySelector(".dropdown");
+
+servicesToggle.addEventListener("click", function (e) {
+    if (window.innerWidth <= 768) {
+        e.preventDefault();
+        dropdown.classList.toggle("active");
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+ <section class="service-hero">
+        <div class="service-hero-content">
+            <h1>Gynaecology Laparoscopic Procedures </h1>
+        </div>
+    </section>
+
+
+
+
+
+
+<!-- 1 -->
+<div class="service-flex">
+<div class="service-content">
+<h3 class="service-heading">Laparoscopic Hysterectomy (TLH)</h3>
+<p class="service-desc">
+Total Laparoscopic Hysterectomy (TLH) is a minimally invasive surgical procedure
+used for the removal of the uterus through small abdominal incisions.
+This advanced technique ensures less blood loss, minimal scarring,
+reduced post-operative pain, and faster recovery compared to traditional open surgery.
+It is commonly recommended for conditions such as fibroids, abnormal bleeding,
+adenomyosis, and uterine disorders requiring surgical management.
+</p>
+<div class="service-feature"><i class="fa-solid fa-scissors"></i> Minimally Invasive Surgery</div>
+<div class="service-feature"><i class="fa-solid fa-bandage"></i> Faster Recovery</div>
+<div class="service-feature"><i class="fa-solid fa-shield-heart"></i> Reduced Pain & Scarring</div>
+</div>
+<div class="service-image-box">
+<img src="images/lap/Hysterectomy.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 2 -->
+<div class="service-flex reverse">
+<div class="service-content">
+<h3 class="service-heading">Laparoscopic Myomectomy</h3>
+<p class="service-desc">
+Laparoscopic Myomectomy is a specialized procedure to remove uterine fibroids
+while preserving the uterus and fertility potential.
+Using advanced laparoscopic instruments, fibroids are precisely excised
+with minimal trauma to surrounding tissues.
+This procedure is ideal for women experiencing heavy bleeding,
+pelvic pain, or infertility due to fibroids.
+</p>
+<div class="service-feature"><i class="fa-solid fa-circle-dot"></i> Fibroid Removal</div>
+<div class="service-feature"><i class="fa-solid fa-heart"></i> Uterus Preservation</div>
+<div class="service-feature"><i class="fa-solid fa-baby"></i> Fertility Protection</div>
+</div>
+<div class="service-image-box">
+<img src="images/lap/Myomectomy.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 3 -->
+<div class="service-flex">
+<div class="service-content">
+<h3 class="service-heading">Laparoscopic Ovarian Cystectomy</h3>
+<p class="service-desc">
+This minimally invasive procedure is performed to remove ovarian cysts
+while preserving healthy ovarian tissue.
+Laparoscopic ovarian cystectomy ensures accurate diagnosis and treatment,
+minimal blood loss, and quicker recovery.
+It is effective for managing benign cysts, endometriotic cysts,
+and other ovarian abnormalities.
+</p>
+<div class="service-feature"><i class="fa-solid fa-egg"></i> Ovarian Preservation</div>
+<div class="service-feature"><i class="fa-solid fa-microscope"></i> Precise Removal</div>
+<div class="service-feature"><i class="fa-solid fa-clock"></i> Quick Recovery</div>
+</div>
+<div class="service-image-box">
+<img src="images/lap/Ovarian Cystectomy.jpg cyst.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 4 -->
+<div class="service-flex reverse">
+<div class="service-content">
+<h3 class="service-heading">Laparoscopic Endometriosis Surgery</h3>
+<p class="service-desc">
+Advanced laparoscopic surgery for diagnosing and treating endometriosis.
+The procedure involves precise removal of abnormal endometrial tissue
+that causes chronic pelvic pain and infertility.
+Minimally invasive techniques help reduce recurrence,
+preserve fertility, and improve overall quality of life.
+</p>
+<div class="service-feature"><i class="fa-solid fa-heart-pulse"></i> Pain Relief</div>
+<div class="service-feature"><i class="fa-solid fa-magnifying-glass"></i> Accurate Diagnosis</div>
+<div class="service-feature"><i class="fa-solid fa-shield-heart"></i> Fertility Support</div>
+</div>
+<div class="service-image-box">
+<img src="images/lap/Endometriosis Surgery.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 5 -->
+<div class="service-flex">
+<div class="service-content">
+<h3 class="service-heading">Laparoscopic Ectopic Pregnancy</h3>
+<p class="service-desc">
+Laparoscopic management of ectopic pregnancy ensures safe and timely removal
+of pregnancy implanted outside the uterus.
+The minimally invasive approach minimizes surgical trauma,
+reduces hospital stay, and preserves future fertility whenever possible.
+Immediate intervention prevents life-threatening complications.
+</p>
+<div class="service-feature"><i class="fa-solid fa-kit-medical"></i> Emergency Procedure</div>
+<div class="service-feature"><i class="fa-solid fa-shield-virus"></i> Safe Removal</div>
+<div class="service-feature"><i class="fa-solid fa-heart"></i> Fertility Preservation</div>
+</div>
+<div class="service-image-box">
+<img src="images/lap/Ectopic Pregnancy Surgery.jpg" class="service-img">
+</div>
+</div>
+
+<!-- 6 -->
+<div class="service-flex reverse">
+<div class="service-content">
+<h3 class="service-heading">Laparoscopic Tubal Recanalization</h3>
+<p class="service-desc">
+Laparoscopic tubal recanalization is performed to restore blocked fallopian tubes
+and improve chances of natural conception.
+Using microsurgical techniques, the blockage is carefully cleared
+while preserving surrounding reproductive structures.
+This advanced procedure offers hope for couples facing infertility
+due to tubal blockage.
+</p>
+<div class="service-feature"><i class="fa-solid fa-link"></i> Tube Restoration</div>
+<div class="service-feature"><i class="fa-solid fa-baby"></i> Fertility Enhancement</div>
+<div class="service-feature"><i class="fa-solid fa-stethoscope"></i> Microsurgical Precision</div>
+</div>
+<div class="service-image-box">
+<img src="images/lap/Tubal Recanalization.jpg" class="service-img">
+</div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="footer-wrapper">
+
+            <!-- Quick Links -->
+            <div class="footer-col reveal-left">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-col reveal-left">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="gynaecology.html">Gynaecology</a></li>
+                    <li><a href="obstetrics.html">Obstetrics</a></li>
+                    <li><a href="gynaecology-laparoscopic.html">Gynaecology Laparoscopic</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-col reveal-right">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        +91 80193 80927
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        drmanjulahospital1@gmail.com
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Near Bachpan School, Ramnagar, Hanamkonda.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Logo & Social -->
+            <div class="footer-col reveal-right footer-brand">
+                <h3>FOLLOW US ON</h3>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            © 2026 Dr Manjula Hospital — All Rights Reserved
+        </div>
+
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        function revealFooter() {
+            const elements = document.querySelectorAll(".reveal-left, .reveal-right");
+
+            elements.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+
+                if (elementTop < windowHeight - 120) {
+                    el.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealFooter);
+    </script>
+
+
+
+
+<!-- Floating Contact Icons -->
+<div class="floating-icons">
+
+    <!-- Phone -->
+    <a href="tel:+918019380927" class="float-btn phone" title="Call Now">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/918019380927" target="_blank" class="float-btn whatsapp" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</div>

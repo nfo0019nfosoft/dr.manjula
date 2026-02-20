@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Manjula Hospital</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <link rel="icon" type="image/png" href="images/lap/l11.png">
+
+    <link rel="stylesheet" href="css/gynaecology.css">
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-flex">
+                <div class="top-left">
+                    <div class="top-item"><i class="fas fa-phone-volume"></i> +91 80193 80927</div>
+                    <div class="top-item"><i class="far fa-clock"></i> Mon–Sun 9:00 AM – 9:00 PM</div>
+                    <div class="top-item"><i class="far fa-envelope"></i> drmanjulahospital1@gmail.com</div>
+                </div>
+                <a href="contact.html" class="btn-appoint">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+        <div class="container nav-container">
+
+          <div class="logo">
+    <a href="index.html">
+        <img src="images/lap/l1.png" alt="Logo">
+    </a>
+</div>
+
+            <!-- NAVIGATION -->
+            <nav>
+                <ul class="nav-links">
+
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="services-toggle">
+                            Services <i class="fa-solid fa-angle-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="gynaecology.html">Gynaecology</a></li>
+                            <li><a href="obstetrics.html">Obstetrics</a></li>
+                            <li><a href="gynaecology-laparoscopic.html">Gynaecology Laparoscopic</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </div>
+    </header>
+
+
+
+    <!-- ================= JS ================= -->
+    <script>
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector(".nav-links");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+
+        const servicesToggle = document.querySelector(".services-toggle");
+        const dropdown = document.querySelector(".dropdown");
+
+        servicesToggle.addEventListener("click", function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle("active");
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+    <!-- ================= SERVICE HERO ================= -->
+    <section class="service-hero">
+        <div class="service-hero-content">
+            <h1>Gynaecology Services</h1>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- 1 -->
+                <div class="service-flex">
+                    <div class="service-content">
+                        <h3 class="service-heading">Menstrual Disorders Treatment</h3>
+                        <p class="service-desc">
+                            Diagnosis and modern treatments for irregular, heavy or painful menstrual cycles.
+                            We identify the root causes such as hormonal imbalance, thyroid issues, or uterine
+                            conditions.
+                            Based on the evaluation, personalized medical or minimally invasive treatments are provided.
+                            Our goal is to help women achieve comfortable, healthy, and regular menstrual cycles.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-droplet"></i> Irregular / Heavy Bleeding
+                        </div>
+                        <div class="service-feature"><i class="fa-solid fa-heart-circle-exclamation"></i> Painful
+                            Periods</div>
+                        <div class="service-feature"><i class="fa-solid fa-star-of-life"></i> Cycle Regulation</div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/Menstrual Disorders .jpg" class="service-img">
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="service-flex reverse">
+                    <div class="service-content">
+                        <h3 class="service-heading">PCOS / PCOD Management</h3>
+                        <p class="service-desc">
+                            Holistic hormonal management, lifestyle guidance and fertility support for PCOS / PCOD.
+                            We perform detailed hormonal and ultrasound assessments to understand the condition clearly.
+                            Treatment focuses on restoring ovulation, regulating cycles, and improving long-term health.
+                            We also offer weight, skin, and fertility-related care for complete PCOS management.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-microscope"></i> Hormonal Evaluation</div>
+                        <div class="service-feature"><i class="fa-solid fa-apple-whole"></i> Lifestyle Guidance</div>
+                        <div class="service-feature"><i class="fa-solid fa-chart-line"></i> Fertility Support</div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/PCOD.jpg" class="service-img">
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="service-flex">
+                    <div class="service-content">
+                        <h3 class="service-heading">Thyroid & High Blood Pressure (Women)</h3>
+                        <p class="service-desc">
+                            Specialized monitoring and treatment tailored for women’s endocrine and blood pressure
+                            issues.
+                            Thyroid imbalance affects weight, mood, fertility, and menstrual patterns, requiring timely
+                            care.
+                            We offer accurate diagnosis and safe medication plans to stabilize hormone and BP levels.
+                            Regular follow-ups help prevent long-term health complications.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-heart-pulse"></i> Thyroid Disorder Care</div>
+                        <div class="service-feature"><i class="fa-solid fa-gauge"></i> BP Monitoring</div>
+                        <div class="service-feature"><i class="fa-solid fa-stethoscope"></i> Long-term Follow-up</div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/Thyroid.jpg" class="service-img">
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="service-flex reverse">
+                    <div class="service-content">
+                        <h3 class="service-heading">White Discharge Treatment</h3>
+                        <p class="service-desc">
+                            Accurate diagnosis and effective treatment of abnormal vaginal discharge and infections.
+                            We identify whether the discharge is due to fungal, bacterial, or hormonal causes.
+                            Treatment includes safe medications and preventive guidance to avoid recurrence.
+                            Early care ensures comfort, hygiene, and long-term vaginal health.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-vial-virus"></i> Infection Screening</div>
+                        <div class="service-feature"><i class="fa-solid fa-shield-heart"></i> Hygiene Treatment</div>
+                        <div class="service-feature"><i class="fa-solid fa-capsules"></i> Medications</div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/White discharge.jpg" class="service-img">
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="service-flex">
+                    <div class="service-content">
+                        <h3 class="service-heading">Uterine Fibroids</h3>
+                        <p class="service-desc">
+                            Diagnosis, medical options and minimally invasive procedures for fibroid management.
+                            Fibroids can cause heavy bleeding, abdominal pain, and fertility problems if untreated.
+                            We use ultrasound scanning and advanced treatment methods to manage them safely.
+                            Laparoscopic options ensure minimal pain and quicker recovery.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-circle-dot"></i> Ultrasound Diagnosis</div>
+                        <div class="service-feature"><i class="fa-solid fa-pills"></i> Medication Treatment</div>
+                        <div class="service-feature"><i class="fa-solid fa-syringe"></i> Surgical Options</div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/Uterine Fibroids.jpg" class="service-img">
+                    </div>
+                </div>
+
+
+                <!-- 6. Ovarian Cyst -->
+                <div class="service-flex reverse">
+                    <div class="service-content">
+                        <h3 class="service-heading">Ovarian Cyst Diagnosis & Treatment</h3>
+                        <p class="service-desc">
+                            Complete evaluation and tailored treatment for ovarian cysts of all types.
+                            Using ultrasound and clinical assessment, we determine whether a cyst needs observation or
+                            removal.
+                            Both medical and laparoscopic solutions are available for safe and effective treatment.
+                            We ensure long-term hormonal balance and symptom relief.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-egg"></i> Ultrasound Detection</div>
+                        <div class="service-feature"><i class="fa-solid fa-stethoscope"></i> Symptom Analysis</div>
+                        <div class="service-feature"><i class="fa-solid fa-scissors"></i> Laparoscopic Removal</div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/Ovarian Cyst.jpg" class="service-img">
+                    </div>
+                </div>
+
+                <!-- 7. Endometriosis -->
+                <div class="service-flex">
+                    <div class="service-content">
+                        <h3 class="service-heading">Endometriosis Treatment</h3>
+                        <p class="service-desc">
+                            Advanced diagnosis and minimally invasive surgery for endometriosis-related pain and
+                            infertility.
+                            The condition can affect daily life, menstrual comfort, and reproductive health.
+                            We provide expert laparoscopic treatment to remove endometrial tissue safely.
+                            Post-treatment care focuses on pain relief and fertility improvement.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-circle-exclamation"></i> Pain Relief</div>
+                        <div class="service-feature"><i class="fa-solid fa-microscope"></i> Diagnostic Laparoscopy</div>
+                        <div class="service-feature"><i class="fa-solid fa-heart-circle-check"></i> Fertility
+                            Preservation</div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/Endometriosis.jpg" class="service-img">
+                    </div>
+                </div>
+
+                <!-- 8. Pelvic Pain -->
+                <div class="service-flex reverse">
+                    <div class="service-content">
+                        <h3 class="service-heading">Pelvic Pain Evaluation</h3>
+                        <p class="service-desc">
+                            Advanced diagnosis for chronic pelvic pain affecting daily life and reproductive health.
+                            We provide complete clinical evaluation and targeted treatment plans.
+                            Our approach focuses on identifying root causes and providing long-term relief.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-stethoscope"></i> Full Clinical Exam</div>
+                        <div class="service-feature"><i class="fa-solid fa-magnifying-glass"></i> Ultrasound Testing
+                        </div>
+                        <div class="service-feature"><i class="fa-solid fa-hand-holding-heart"></i> Personalized Care
+                        </div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/Pelvic Pain.jpg" class="service-img">
+                    </div>
+                </div>
+
+                <!-- 9. Cervical Screening -->
+                <div class="service-flex">
+                    <div class="service-content">
+                        <h3 class="service-heading">Cervical Screening (Pap Smear)</h3>
+                        <p class="service-desc">
+                            Routine Pap Smear screening for early detection of cervical abnormalities and infections.
+                            The test is painless, quick, and highly effective in preventing cervical cancer.
+                            We guide patients through proper screening schedules and follow-up steps.
+                            Early detection ensures complete protection and peace of mind.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-vial"></i> Pap Smear Test</div>
+                        <div class="service-feature"><i class="fa-solid fa-virus"></i> HPV Detection</div>
+                        <div class="service-feature"><i class="fa-solid fa-shield-heart"></i> Preventive Care</div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/Pap Smear.jpg" class="service-img">
+                    </div>
+                </div>
+
+                <!-- 10. Breast Screening -->
+                <div class="service-flex reverse">
+                    <div class="service-content">
+                        <h3 class="service-heading">Breast Examination & Screening</h3>
+                        <p class="service-desc">
+                            Clinical breast evaluation to detect lumps, pain, infections or early cancer signs.
+                            We perform safe and detailed breast assessments along with ultrasound if needed.
+                            Timely screening helps detect issues early when treatment is most effective.
+                            Our focus is women’s long-term breast health and confidence.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-ribbon"></i> Cancer Screening</div>
+                        <div class="service-feature"><i class="fa-solid fa-magnifying-glass"></i> Mammogram/Ultrasound
+                        </div>
+                        <div class="service-feature"><i class="fa-solid fa-hand-holding-heart"></i> Risk Assessment
+                        </div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/breast examination.jpg" class="service-img">
+                    </div>
+                </div>
+
+                <!-- 11. Vaginal Infections -->
+                <div class="service-flex">
+                    <div class="service-content">
+                        <h3 class="service-heading">Vaginal Infections / UTI Treatment</h3>
+                        <p class="service-desc">
+                            Targeted diagnosis and treatment for vaginal infections and urinary tract infections.
+                            Symptoms like burning, discharge, itching or discomfort need immediate care.
+                            We identify the exact infection and offer fast-acting medications.
+                            Preventive advice helps avoid frequent recurrence.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-vial-virus"></i> Infection Tests</div>
+                        <div class="service-feature"><i class="fa-solid fa-pills"></i> Medications</div>
+                        <div class="service-feature"><i class="fa-solid fa-shield-virus"></i> Prevention Advice</div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/Vaginal infection.jpg" class="service-img">
+                    </div>
+                </div>
+
+                <!-- 12. Hormonal Imbalance -->
+                <div class="service-flex reverse">
+                    <div class="service-content">
+                        <h3 class="service-heading">Hormonal Imbalance Treatment</h3>
+                        <p class="service-desc">
+                            Expert evaluation and treatment for hormonal issues affecting periods, mood and fertility.
+                            Hormonal imbalance can cause irregular cycles, acne, weight changes and emotional stress.
+                            We conduct hormone profiling to create a tailored treatment plan.
+                            The aim is to restore balance naturally and improve overall wellbeing.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-flask"></i> Hormonal Testing</div>
+                        <div class="service-feature"><i class="fa-solid fa-leaf"></i> Diet & Lifestyle Plan</div>
+                        <div class="service-feature"><i class="fa-solid fa-heart-circle-check"></i> Ongoing Monitoring
+                        </div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/Hormonal Imbalance.jpg" class="service-img">
+                    </div>
+                </div>
+
+                <!-- 13. Menopause -->
+                <div class="service-flex">
+                    <div class="service-content">
+                        <h3 class="service-heading">Menopause Management</h3>
+                        <p class="service-desc">
+                            Comprehensive care for women experiencing physical and emotional changes during menopause.
+                            We offer hormonal and non-hormonal therapies to reduce discomfort and improve daily life.
+                            Support includes bone health, sleep improvement, and mood stabilization.
+                            Our care ensures a smooth and healthy menopausal transition.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-fire"></i> Hot Flash Control</div>
+                        <div class="service-feature"><i class="fa-solid fa-face-smile"></i> Mood Management</div>
+                        <div class="service-feature"><i class="fa-solid fa-leaf"></i> Hormone Therapy</div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/Menopause.jpg" class="service-img">
+                    </div>
+                </div>
+
+                <!-- 14. Infertility -->
+                <div class="service-flex reverse">
+                    <div class="service-content">
+                        <h3 class="service-heading">Infertility Evaluation & Treatment</h3>
+                        <p class="service-desc">
+                            Complete fertility evaluation and personalized solutions for women trying to conceive.
+                            We assess hormonal levels, ovulation patterns, and reproductive health thoroughly.
+                            Treatments range from medication to advanced fertility procedures based on need.
+                            Our goal is to support your journey to healthy and successful pregnancy.
+                        </p>
+                        <div class="service-feature"><i class="fa-solid fa-baby"></i> Ovulation Tracking</div>
+                        <div class="service-feature"><i class="fa-solid fa-stethoscope"></i> Fertility Tests</div>
+                        <div class="service-feature"><i class="fa-solid fa-heart-circle-check"></i> Personalized
+                            Treatment</div>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="images/gyn/Infertility.jpg" class="service-img">
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="footer-wrapper">
+
+            <!-- Quick Links -->
+            <div class="footer-col reveal-left">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-col reveal-left">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="gynaecology.html">Gynaecology</a></li>
+                    <li><a href="obstetrics.html">Obstetrics</a></li>
+                    <li><a href="gynaecology-laparoscopic.html">Gynaecology Laparoscopic</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-col reveal-right">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        +91 80193 80927
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        drmanjulahospital1@gmail.com
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Near Bachpan School, Ramnagar, Hanamkonda.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Logo & Social -->
+            <div class="footer-col reveal-right footer-brand">
+                <h3>FOLLOW US ON</h3>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            © 2026 Dr Manjula Hospital — All Rights Reserved
+        </div>
+
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        function revealFooter() {
+            const elements = document.querySelectorAll(".reveal-left, .reveal-right");
+
+            elements.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+
+                if (elementTop < windowHeight - 120) {
+                    el.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealFooter);
+    </script>
+
+
+
+
+<!-- Floating Contact Icons -->
+<div class="floating-icons">
+
+    <!-- Phone -->
+    <a href="tel:+918019380927" class="float-btn phone" title="Call Now">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/918019380927" target="_blank" class="float-btn whatsapp" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</div>

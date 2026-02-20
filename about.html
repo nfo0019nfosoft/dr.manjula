@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Manjula Hospital</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link rel="icon" type="image/png" href="images/lap/l11.png">
+
+    <link rel="stylesheet" href="css/about.css">
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-flex">
+                <div class="top-left">
+                    <div class="top-item"><i class="fas fa-phone-volume"></i> +91 80193 80927</div>
+                    <div class="top-item"><i class="far fa-clock"></i> Mon–Sun 9:00 AM – 9:00 PM</div>
+                    <div class="top-item"><i class="far fa-envelope"></i> drmanjulahospital1@gmail.com</div>
+                </div>
+                <a href="contact.html" class="btn-appoint">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    
+    <header>
+        <div class="container nav-container">
+
+            <div class="logo">
+    <a href="index.html">
+        <img src="images/lap/l1.png" alt="Logo">
+    </a>
+</div>
+
+
+            <!-- NAVIGATION -->
+            <nav>
+                <ul class="nav-links">
+
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="services-toggle">
+                            Services <i class="fa-solid fa-angle-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="gynaecology.html">Gynaecology</a></li>
+                            <li><a href="obstetrics.html">Obstetrics</a></li>
+                            <li><a href="gynaecology-laparoscopic.html">Gynaecology Laparoscopic</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </div>
+    </header>
+
+   
+ 
+    <!-- ================= JS ================= -->
+   <script>
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
+
+const servicesToggle = document.querySelector(".services-toggle");
+const dropdown = document.querySelector(".dropdown");
+
+servicesToggle.addEventListener("click", function (e) {
+    if (window.innerWidth <= 768) {
+        e.preventDefault();
+        dropdown.classList.toggle("active");
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <section class="service-hero">
+        <div class="service-hero-content">
+            <h1>ABOUT US</h1>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section class="about-section">
+        <div class="about-container">
+
+            <!-- IMAGE LEFT -->
+            <div class="about-image reveal-left">
+                <img src="images/hosbg.png" alt="Dr Manjula Hospital">
+            </div>
+
+            <!-- CONTENT RIGHT -->
+            <div class="about-content reveal-right">
+                <h2>WELCOME TO DR MANJULA HOSPITAL</h2>
+
+                <p>
+                    At Dr Manjula Hospital, we combine compassionate care with advanced medical
+                    expertise to ensure the highest standards of treatment for every patient.
+                    We specialize in Obstetrics, Gynecology, and Laparoscopic procedures,
+                    providing a safe and supportive environment for women and families.
+                    Manjua Hospital is a trusted healthcare center providing advanced and ethical treatment in Gynecology, Obstetrics, General and Laparoscopic Surgery. With years of experience and thousands of happy patients, our expert team ensures safe, compassionate, and affordable medical care.
+                    With experienced specialists, modern equipment, and ethical medical practices,
+                    we focus on accurate diagnosis, personalized treatment, and comprehensive care.
+                    Every patient receives dignity, respect, and dedicated attention.
+                </p>
+
+                
+            </div>
+
+        </div>
+    </section>
+
+
+    <script>
+
+        function revealAboutSection() {
+            const reveals = document.querySelectorAll(".reveal-left, .reveal-right");
+
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 120;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealAboutSection);
+
+        /* Run once on page load */
+        revealAboutSection();
+
+    </script>
+
+
+
+
+
+<section class="mission-vision">
+
+    <div class="mv-heading">
+        <h2>OUR MISSION & VISION</h2>
+        <p>
+            We are committed to delivering compassionate, trusted and advanced
+            healthcare services for women and children with excellence and care.
+        </p>
+    </div>
+
+    <div class="mv-container">
+
+        <!-- Mission Card -->
+        <div class="mv-card mission">
+            <span class="tag">OUR MISSION</span>
+            <div class="icon">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <h3>Care with Compassion</h3>
+            <p>
+                To provide ethical, patient-centered healthcare by combining
+                medical expertise, modern technology and a commitment to
+                safety and comfort.
+            </p>
+        </div>
+
+        <!-- Vision Card -->
+        <div class="mv-card vision">
+            <span class="tag">OUR VISION</span>
+            <div class="icon">
+                <i class="fa-solid fa-eye"></i>
+            </div>
+            <h3>Excellence in Every Life</h3>
+            <p>
+                To become a trusted center for women and child healthcare,
+                recognized for innovation, empathy and lifelong commitment
+                to patient well-being.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<script>
+    const cards = document.querySelectorAll('.mv-card');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="footer-wrapper">
+
+            <!-- Quick Links -->
+            <div class="footer-col reveal-left">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-col reveal-left">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="gynaecology.html">Gynaecology</a></li>
+                    <li><a href="obstetrics.html">Obstetrics</a></li>
+                    <li><a href="gynaecology-laparoscopic.html">Gynaecology Laparoscopic</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-col reveal-right">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        +91 80193 80927
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        drmanjulahospital1@gmail.com
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Near Bachpan School, Ramnagar, Hanamkonda.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Logo & Social -->
+            <div class="footer-col reveal-right footer-brand">
+                <h3>FOLLOW US ON</h3>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            © 2026 Dr Manjula Hospital — All Rights Reserved
+        </div>
+
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        function revealFooter() {
+            const elements = document.querySelectorAll(".reveal-left, .reveal-right");
+
+            elements.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+
+                if (elementTop < windowHeight - 120) {
+                    el.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealFooter);
+    </script>
+
+
+
+
+<!-- Floating Contact Icons -->
+<div class="floating-icons">
+
+    <!-- Phone -->
+    <a href="tel:+918019380927" class="float-btn phone" title="Call Now">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/918019380927" target="_blank" class="float-btn whatsapp" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</div>
+
+
+
+
+</body>
+</html>
